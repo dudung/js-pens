@@ -1,5 +1,5 @@
 /*
-  0000.js
+  0001.js
   Sparisoma Viridi | https://github.com/dudung
   Copy content from left textarea to righttext area after button is clicked
   20221027 Create and test it.
