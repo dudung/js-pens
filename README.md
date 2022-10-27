@@ -13,7 +13,7 @@ $ git clone https://github.com/dudung/js-pens
 To use code
 + Include JS file in a HTML using<br>
   e.g. `<script src="0000.js"></script>`
-+ Paste content of JS file to CodePen<br>
++ Copy content of JS file and paste it to CodePen<br>
   e.g. https://codepen.io/6unpnp/pen/BaVyeBW?editors=0010
 
 ## content
