@@ -8,7 +8,7 @@ tabel of content in alphabetical index
 
 
 ## h
-+ [hello world with a button and a textarea](0000.js)
++ [hello world with button and textarea](0000.js)
 [`BaVyeBW`](https://codepen.io/6unpnp/pen/BaVyeBW?editors=0010)
 
 
