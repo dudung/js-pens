@@ -1,2 +1,2 @@
 # js
-a javascript cookbook
+learning front end js pens with codepen
