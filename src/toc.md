@@ -2,6 +2,10 @@
 tabel of content in alphabetical index
 
 
+## a
++ [calculate average of numbers from textarea and display it in other](0003.js) [`mdKJVqb`](https://codepen.io/6unpnp/pen/mdKJVqb?editors=0010)
+
+
 ## c
 + [copy content between two textarea elements](0001.js) 
 [`NWzPVPa`](https://codepen.io/6unpnp/pen/NWzPVPa?editors=0010)
