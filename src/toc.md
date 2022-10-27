@@ -12,3 +12,5 @@ tabel of content in alphabetical index
 [`BaVyeBW`](https://codepen.io/6unpnp/pen/BaVyeBW?editors=0010)
 
 
+## s
++ [calculate sum of numbers from textarea and display it in other](0002.js) ['GRGJoWV'](https://codepen.io/6unpnp/pen/GRGJoWV?editors=0010)
