@@ -13,6 +13,9 @@ tabel of content in alphabetical index
 
 ## d
 + [generate and clear data in textarea](0009.js) [`NWzqEao`](https://codepen.io/6unpnp/pen/NWzqEao?editors=0010)
++ [generate and clear random data in textarea](0010.js) [`PoaqxBx`](https://codepen.io/6unpnp/pen/PoaqxBx?editors=0010)
++ [generate random data in textarea and canvas](0011.js) [`KKepbNM`](https://codepen.io/6unpnp/pen/KKepbNM?editors=0010)
+
 
 ## h
 + [hello world with button and textarea](0000.js)
