@@ -29,6 +29,7 @@ function main() {
 }
 
 function btclick() {
+  var ta = document.getElementById("ta");
   var h = "0123456789abcdef";
   r = Math.floor(Math.random() * 16);
   g = Math.floor(Math.random() * 16);
