@@ -1,26 +1,26 @@
 /*
-  0004.js
+  0005.js
   Sparisoma Viridi | https://github.com/dudung
-  Add new line to textarea triggered by button click event
+  Create some random numbers in textarea triggered by button click event
   20221028 Create and test it.
 */
 
 main();
 
-var count = 0;
+var N = 23;
 
 function main() {
   var ta = document.createElement("textarea");
   ta.id = "ta";
   with(ta.style) {
-    height = "100px";
+    height = "120px";
     overflowY = "scroll";
     float = "left";
   }
   ta.placeholder = "click button on the left";
   
   var bt = document.createElement("button")
-  bt.innerHTML = "Add new line";
+  bt.innerHTML = "Random";
   bt.addEventListener("click", btclick);
   with(bt.style) {
     float = "left";
@@ -32,7 +32,12 @@ function main() {
 
 function btclick() {
   var ta = document.getElementById("ta");
-  count += 1;
-  ta.value += "Line number " + count + "\n";
+  var str = ""
+  for(var i = 0; i < N; i++) {
+    x = Math.random();
+    str += x.toFixed(3);
+    str += ", " 
+  }
+  ta.value = str;
   ta.scrollTop = ta.scrollHeight;
 }

@@ -18,7 +18,12 @@ tabel of content in alphabetical index
 
 ## n
 + [add new line to textarea](0004.js)
-[``]()
+[`NWzqNzM `](https://codepen.io/6unpnp/pen/NWzqNzM?editors=0010)
+
+
+## r
++ [generate random numbers by button click and display it on textarea](0005.js) [`JjZdKyN`](https://codepen.io/6unpnp/pen/JjZdKyN?editors=0010)
++ [change textarea background with random color by button click](0006.js) [`JjZdKZy`](https://codepen.io/6unpnp/pen/JjZdKZy?editors=0010)
 
 
 ## s
