@@ -11,6 +11,9 @@ tabel of content in alphabetical index
 [`NWzPVPa`](https://codepen.io/6unpnp/pen/NWzPVPa?editors=0010)
 
 
+## d
++ [generate and clear data in textarea](0009.js) [`NWzqEao`](https://codepen.io/6unpnp/pen/NWzqEao?editors=0010)
+
 ## h
 + [hello world with button and textarea](0000.js)
 [`BaVyeBW`](https://codepen.io/6unpnp/pen/BaVyeBW?editors=0010)
