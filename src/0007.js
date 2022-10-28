@@ -1,5 +1,5 @@
 /*
-  0006.js
+  0007.js
   Sparisoma Viridi | https://github.com/dudung
   Calculate roots of quadratic equationa using quadratic formula
   20221028 Create and test it.
