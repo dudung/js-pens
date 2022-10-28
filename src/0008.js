@@ -1,7 +1,7 @@
 /*
   0008.js
   Sparisoma Viridi | https://github.com/dudung
-  Use for loop to arrange letters in right triangle
+  Use for loop to arrange letters in right triangle formation
   20221028 Create and test it.
 */
 
@@ -36,10 +36,9 @@ function btclick() {
   str = "";
   N = 10;
   for(var i = 1; i < N; i++) {
-    for(var j = 0; j < i; j++) {
-      str += "0";
-    }
-    str += "\n";
+    var left = " ".repeat(N - i);
+    var right = "0".repeat(i);
+    str += left + right + "\n";
   }
   
   ta.value = str;

@@ -16,6 +16,10 @@ tabel of content in alphabetical index
 [`BaVyeBW`](https://codepen.io/6unpnp/pen/BaVyeBW?editors=0010)
 
 
+## l
++ [arrange letter in right triangle formation](0008.js) [`poKJWGq`](https://codepen.io/6unpnp/pen/poKJWGq?editors=0010)
+
+
 ## n
 + [add new line to textarea](0004.js)
 [`NWzqNzM `](https://codepen.io/6unpnp/pen/NWzqNzM?editors=0010)
