@@ -27,7 +27,7 @@ tabel of content in alphabetical index
 
 
 ## m
-+ [show some $\LaTeX$ using MathJax](0012.js) [``]()
++ [show some $\LaTeX$ using MathJax](0012.js) [`JjZYXOQ`](https://codepen.io/6unpnp/pen/JjZYXOQ?editors=0011)
 
 
 ## n
