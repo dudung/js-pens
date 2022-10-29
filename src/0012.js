@@ -111,20 +111,10 @@ function btMJ() {
   MathJax.typeset();
 }
 
-// it works locally but not on Codepen
 function btE1() {
   var ta = document.getElementById("ta");
-  ta.value = "$y = ax^2 + bx + c$";
+  ta.value = "\\(y = ax^2 + bx + c\\)";
 }
-// to work it requieres
-/*
-MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
-  }
-};
-*/
-// before the MathJax cdn is called
 
 function btE2() {
   var ta = document.getElementById("ta");
