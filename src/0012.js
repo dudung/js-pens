@@ -2,7 +2,8 @@
   0012.js
   Sparisoma Viridi | https://github.com/dudung
   Include some LaTeX using MathJax in div element from textarea
-  20221029 Create and test it.
+  20221029 Start to create it.
+  20221030 Continue to improve it with example.
 */
 
 main();
@@ -31,12 +32,32 @@ function main() {
   dv.width = parseInt(dv.style.width);
   dv.height = parseInt(dv.style.height);
   
+  var bdiv = document.createElement("div");
+  
+  var bt1 = document.createElement("button")
+  bt1.innerHTML = "Example 1";
+  bt1.addEventListener("click", btE1);
+  
+  var bt2 = document.createElement("button")
+  bt2.innerHTML = "Example 2";
+  bt2.addEventListener("click", btE2);
+
+  var bt3 = document.createElement("button")
+  bt3.innerHTML = "Example 3";
+  bt3.addEventListener("click", btE3);
+
+  var bt4 = document.createElement("button")
+  bt4.innerHTML = "Example 4";
+  bt4.addEventListener("click", btE4);
+
   var bt = document.createElement("button")
   bt.innerHTML = "MathJax";
   bt.addEventListener("click", btMJ);
   with(bt.style) {
     float = "left";
   }
+  
+  
   
   document.body.append(ta);
   document.body.append(bt);
@@ -45,4 +66,6 @@ function main() {
 
 function btMJ() {
   var ta = document.getElementById("ta");
+  var dv = document.getElementById("dv");
+  dv.innerHTML = ta.value;
 }
