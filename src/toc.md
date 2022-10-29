@@ -26,6 +26,10 @@ tabel of content in alphabetical index
 + [arrange letter in right triangle formation](0008.js) [`poKJWGq`](https://codepen.io/6unpnp/pen/poKJWGq?editors=0010)
 
 
+## m
++ [show some $\LaTeX$ using MathJax](0012.js) [``]()
+
+
 ## n
 + [add new line to textarea](0004.js)
 [`NWzqNzM `](https://codepen.io/6unpnp/pen/NWzqNzM?editors=0010)
