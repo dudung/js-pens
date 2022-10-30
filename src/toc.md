@@ -28,6 +28,8 @@ tabel of content in alphabetical index
 
 ## m
 + [show some $\LaTeX$ using MathJax](0012.js) [`JjZYXOQ`](https://codepen.io/6unpnp/pen/JjZYXOQ?editors=0011)
++ [matrix with textarea and MathJax](0013.js)[`jOKbMOE`](https://codepen.io/6unpnp/pen/jOKbMOE?editors=0010)
++ [add two matrix and show result using Mathjax](0014.js) [``]()
 
 
 ## n
