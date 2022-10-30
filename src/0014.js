@@ -8,6 +8,15 @@
 main();
 
 function main() {
+  var dv1 = document.createElement("div");
+  with(dv1.style) {
+    border = "0px solid #888";
+    background = "#eee";
+    float = "left";
+    width = "180px";
+    height = "179px";
+  }
+  
   var ta1 = document.createElement("textarea");
   ta1.id = "ta1";
   with(ta1.style) {
@@ -16,15 +25,6 @@ function main() {
     overflowY = "scroll";
     float = "left";
     tabSize = 4;
-  }
-  
-  var dv1 = document.createElement("div");
-  with(dv1.style) {
-    border = "0px solid #888";
-    background = "#eee";
-    float = "left";
-    width = "180px";
-    height = "179px";
   }
   
   var bt10 = document.createElement("button")
@@ -55,6 +55,15 @@ function main() {
     width = "25%";
   }
   
+  var dv2 = document.createElement("div");
+  with(dv2.style) {
+    border = "0px solid #888";
+    background = "#eee";
+    float = "left";
+    width = "180px";
+    height = "179px";
+  }
+  
   var ta2 = document.createElement("textarea");
   ta2.id = "ta2";
   with(ta2.style) {
@@ -63,15 +72,6 @@ function main() {
     overflowY = "scroll";
     float = "left";
     tabSize = 4;
-  }
-  
-  var dv2 = document.createElement("div");
-  with(dv2.style) {
-    border = "0px solid #888";
-    background = "#eee";
-    float = "left";
-    width = "180px";
-    height = "179px";
   }
   
   var bt20 = document.createElement("button")
@@ -102,6 +102,58 @@ function main() {
     width = "25%";
   }
   
+  var dv3 = document.createElement("div");
+  with(dv3.style) {
+    border = "0px solid #888";
+    background = "#eee";
+    float = "left";
+    width = "180px";
+    height = "179px";
+  }
+  
+  var ta3 = document.createElement("textarea");
+  ta3.id = "ta3";
+  with(ta3.style) {
+    width = "174px";
+    height = "150px";
+    overflowY = "scroll";
+    float = "left";
+    tabSize = 4;
+  }
+  
+  var bt30 = document.createElement("button")
+  bt30.innerHTML = "Add";
+  bt30.addEventListener("click", function (){ btClear("ta3"); });
+  with(bt30.style) {
+    width = "50%";
+  }
+  
+  var bt31 = document.createElement("button")
+  bt31.innerHTML = "MatJax";
+  bt31.addEventListener("click", function (){
+    btMathJax("ta1", "ta2", "ta3"); 
+  });
+  with(bt31.style) {
+    width = "50%";
+  }
+
+  var dv4 = document.createElement("div");
+  with(dv4.style) {
+    border = "0px solid #888";
+    background = "#fee";
+    float = "left";
+    width = "540px";
+    height = "180px";
+  }
+  
+  var ta4 = document.createElement("div");
+  ta4.id = "ta3";
+  with(ta4.style) {
+    width = "539x";
+    height = "180px";
+    border = "1px solid #888";
+  }
+  
   document.body.append(dv1);
     dv1.append(ta1);
     dv1.append(bt10);
@@ -114,6 +166,12 @@ function main() {
     dv2.append(bt21);
     dv2.append(bt22);
     dv2.append(bt23);
+  document.body.append(dv3);
+    dv3.append(ta3);
+    dv3.append(bt30);
+    dv3.append(bt31);
+  document.body.append(dv4);
+    dv4.append(ta4);
 }
 
 function btClear(taId) {
@@ -124,4 +182,11 @@ function btClear(taId) {
 function btExample(exId, taId) {
   var ta = document.getElementById(taId);
   ta.value = exId;
+}
+
+function btMathJax(ta1Id, ta2Id, ta3Id) {
+  var ta1 = document.getElementById(ta1Id);
+  var ta2 = document.getElementById(ta2Id);
+  var ta3 = document.getElementById(ta3Id);
+  //console.log(ta1, ta2, ta3);
 }
