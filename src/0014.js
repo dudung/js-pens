@@ -183,7 +183,16 @@ function btClear(taId) {
 
 function btExample(exId, taId) {
   var ta = document.getElementById(taId);
-  ta.value = exId;
+  var content;
+  switch(exId) {
+  case "ex11":
+    content = "1 0 0 0\n0 1 0 0\n0 0 1 0\n0 0 0 1";
+  break;
+  case "ex21":
+    content = "0 0 0 1\n0 0 1 0\n0 1 0 0\n1 0 0 0";
+  break;
+  }
+  ta.value = content;
 }
 
 function btAdd(ta1Id, ta2Id, ta3Id) {
@@ -233,8 +242,40 @@ function getMatrix(ta) {
   return M;
 }
 
-function addMatrix(m) {
+function addMatrix(m1, m2) {
+  var ROW = m1.length;
+  var COL = m1[0].length;
+  var m3 = newZeroMatrix(ROW, COL);
+  for(var i = 0; i < ROW; i++) {
+    for(var j = 0; j < COL; j++) {
+      m3[i][j] = m1[i][j] + m2[i][j];
+    }
+  }
+  return m3;
 }
 
 function strMatrix(m) {
+  var ROW = m.length;
+  var COL = m[0].length;
+  var str = "";
+  for(var i = 0; i < ROW; i++) {
+    for(var j = 0; j < COL; j++) {
+      str += m[i][j];
+      if(j < COL - 1) str += " ";
+    }
+    if(i < ROW - 1) str += "\n";
+  }
+  return str;
+}
+
+function newZeroMatrix(ROW, COL) {
+  var m = [];
+  for(var i = 0; i < ROW; i++) {
+    var row = [];
+    for(var j = 0; j < COL; j++) {
+      row.push(0);
+    }
+    m.push(row);
+  }
+  return m;
 }
