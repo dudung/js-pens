@@ -123,7 +123,9 @@ function main() {
   
   var bt30 = document.createElement("button")
   bt30.innerHTML = "Add";
-  bt30.addEventListener("click", function (){ btClear("ta3"); });
+  bt30.addEventListener("click", function (){
+    btAdd("ta1", "ta2", "ta3");
+  });
   with(bt30.style) {
     width = "50%";
   }
@@ -184,9 +186,55 @@ function btExample(exId, taId) {
   ta.value = exId;
 }
 
+function btAdd(ta1Id, ta2Id, ta3Id) {
+  var ta1 = document.getElementById(ta1Id);
+  var ta2 = document.getElementById(ta2Id);
+  var ta3 = document.getElementById(ta3Id);
+  
+  var m1 = getMatrix(ta1);
+  var m2 = getMatrix(ta2);
+  
+  console.log(m1);
+  console.log(m2);
+  
+  var EQUAL_ROW = m1.length == m2.length;
+  var EQUAL_COL = m1[0].length == m2[0].length;
+  if(EQUAL_ROW && EQUAL_COL) {
+    var m3 = addMatrix(m1, m2);
+    ta3.value = strMatrix(m3);
+  } else {
+    ta3.value = "can not add matrices with different dimension";
+  }
+}
+
 function btMathJax(ta1Id, ta2Id, ta3Id) {
   var ta1 = document.getElementById(ta1Id);
   var ta2 = document.getElementById(ta2Id);
   var ta3 = document.getElementById(ta3Id);
-  //console.log(ta1, ta2, ta3);
+}
+
+
+function getMatrix(ta) {
+  var str = ta.value;
+  lines = str.split("\n");
+  ROW = lines.length;
+  if(lines[ROW-1].length == 0) ROW--;
+  var M = [];
+  for(var i = 0; i < ROW; i++) {
+    var line = lines[i].split(" ");
+    var COL = line.length;
+    var row = [];
+    for(var j = 0; j < COL; j++) {
+      var x = parseFloat(line[j]);
+      row.push(x);
+    }
+    M.push(row);
+  }
+  return M;
+}
+
+function addMatrix(m) {
+}
+
+function strMatrix(m) {
 }
