@@ -1,11 +1,13 @@
 /*
   0014.js
   Sparisoma Viridi | https://github.com/dudung
-  Add two matrices from textarea and show result in div using MathJax
+  Add and sub two matrices from textarea, show result in div with MathJax
   20221030 Start to create it with more complex layout of elements.
 */
 
 main();
+
+var op = "";
 
 function main() {
   var dv1 = document.createElement("div");
@@ -125,18 +127,29 @@ function main() {
   bt30.innerHTML = "Add";
   bt30.addEventListener("click", function (){
     btAdd("ta1", "ta2", "ta3");
+    op = "+";
   });
   with(bt30.style) {
-    width = "50%";
+    width = "30%";
   }
   
   var bt31 = document.createElement("button")
-  bt31.innerHTML = "MatJax";
+  bt31.innerHTML = "Sub";
   bt31.addEventListener("click", function (){
-    btMathJax("ta1", "ta2", "ta3"); 
+    btSub("ta1", "ta2", "ta3");
+    op = "-";
   });
   with(bt31.style) {
-    width = "50%";
+    width = "30%";
+  }
+  
+  var bt32 = document.createElement("button")
+  bt32.innerHTML = "MatJax";
+  bt32.addEventListener("click", function (){
+    btMathJax("out", "ta1", "ta2", "ta3"); 
+  });
+  with(bt32.style) {
+    width = "40%";
   }
 
   var dv4 = document.createElement("div");
@@ -149,7 +162,7 @@ function main() {
   }
   
   var ta4 = document.createElement("div");
-  ta4.id = "ta3";
+  ta4.id = "out";
   with(ta4.style) {
     width = "539x";
     height = "180px";
@@ -172,6 +185,7 @@ function main() {
     dv3.append(ta3);
     dv3.append(bt30);
     dv3.append(bt31);
+    dv3.append(bt32);
   document.body.append(dv4);
     dv4.append(ta4);
 }
@@ -186,10 +200,22 @@ function btExample(exId, taId) {
   var content;
   switch(exId) {
   case "ex11":
-    content = "1 0 0 0\n0 1 0 0\n0 0 1 0\n0 0 0 1";
+    content = "1 0 0\n0 1 0\n0 0 1\n1 0 0";
   break;
   case "ex21":
+    content = "0 0 1\n0 1 0\n1 0 0\n0 0 1";
+  break;
+  case "ex12":
+    content = "1 0 0 0\n0 1 0 0\n0 0 1 0\n0 0 0 1";
+  break;
+  case "ex22":
     content = "0 0 0 1\n0 0 1 0\n0 1 0 0\n1 0 0 0";
+  break;
+  case "ex13":
+    content = "1 0 1 0 1\n0 1 0 1 0\n0 0 1 0 1\n0 0 0 1 1";
+  break;
+  case "ex23":
+    content = "1 0 0 0 1\n0 0 1 0 1\n0 1 0 0 1\n1 0 0 0 1";
   break;
   }
   ta.value = content;
@@ -203,9 +229,6 @@ function btAdd(ta1Id, ta2Id, ta3Id) {
   var m1 = getMatrix(ta1);
   var m2 = getMatrix(ta2);
   
-  console.log(m1);
-  console.log(m2);
-  
   var EQUAL_ROW = m1.length == m2.length;
   var EQUAL_COL = m1[0].length == m2[0].length;
   if(EQUAL_ROW && EQUAL_COL) {
@@ -216,12 +239,78 @@ function btAdd(ta1Id, ta2Id, ta3Id) {
   }
 }
 
-function btMathJax(ta1Id, ta2Id, ta3Id) {
+function btSub(ta1Id, ta2Id, ta3Id) {
   var ta1 = document.getElementById(ta1Id);
   var ta2 = document.getElementById(ta2Id);
   var ta3 = document.getElementById(ta3Id);
+  
+  var m1 = getMatrix(ta1);
+  var m2 = getMatrix(ta2);
+  
+  var EQUAL_ROW = m1.length == m2.length;
+  var EQUAL_COL = m1[0].length == m2[0].length;
+  if(EQUAL_ROW && EQUAL_COL) {
+    var m3 = subMatrix(m1, m2);
+    ta3.value = strMatrix(m3);
+  } else {
+    ta3.value = "can not add matrices with different dimension";
+  }
 }
 
+function btMathJax(outId, ta1Id, ta2Id, ta3Id) {
+  var out = document.getElementById(outId);
+  var ta1 = document.getElementById(ta1Id);
+  var ta2 = document.getElementById(ta2Id);
+  var ta3 = document.getElementById(ta3Id);
+  
+  var m1 = getMatrix(ta1);
+  var m2 = getMatrix(ta2);
+  var m3 = getMatrix(ta3);
+  
+  var mj1 = arrayToMathJax(m1);
+  var mj2 = arrayToMathJax(m2);
+  var mj3 = arrayToMathJax(m3);
+  
+  var str = "$$\n";
+  str += mj1 + "\n";
+  str += op + "\n";
+  str += mj2 + "\n";
+  str += "=\n";
+  str += mj3 + "\n";
+  str += "$$"
+  
+  out.innerHTML = str;
+  MathJax.typeset();
+}
+
+function arrayToMathJax(mat) {
+  var N = mat.length;
+  var M = mat[0].length;
+  var cols = "c".repeat(M);
+  var str_matrix = "";
+  
+  for(var j = 0; j < N; j++) {
+    row = ""; 
+    for(var i = 0; i < M; i++) {
+      row += mat[j][i];
+      if(i < M - 1)
+        row += " & "
+      else {
+        row += "\\newline\n";
+      }
+    }
+    str_matrix += row;
+  }
+  
+  var mjs = "";
+  mjs += "\\left[\n";
+  mjs += "\\begin{array}{" + cols + "}\n";
+  mjs += str_matrix;
+  mjs += "\\end{array}\n";
+  mjs += "\\right]\n";
+  
+  return mjs;
+}
 
 function getMatrix(ta) {
   var str = ta.value;
@@ -249,6 +338,18 @@ function addMatrix(m1, m2) {
   for(var i = 0; i < ROW; i++) {
     for(var j = 0; j < COL; j++) {
       m3[i][j] = m1[i][j] + m2[i][j];
+    }
+  }
+  return m3;
+}
+
+function subMatrix(m1, m2) {
+  var ROW = m1.length;
+  var COL = m1[0].length;
+  var m3 = newZeroMatrix(ROW, COL);
+  for(var i = 0; i < ROW; i++) {
+    for(var j = 0; j < COL; j++) {
+      m3[i][j] = m1[i][j] - m2[i][j];
     }
   }
   return m3;
