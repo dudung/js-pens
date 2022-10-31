@@ -31,6 +31,7 @@ tabel of content in alphabetical index
 + [matrix with textarea and MathJax](0013.js)[`jOKbMOE`](https://codepen.io/6unpnp/pen/jOKbMOE?editors=0010)
 + [add and substract two matrix and show result using Mathjax](0014.js) [`jOKbwdg`](https://codepen.io/6unpnp/pen/jOKbwdg?editors=0010)
 + [some functions related to matrix](0015.js) [`jOKbjZd`](https://codepen.io/6unpnp/pen/jOKbjZd?editors=0010)
++ [create random integer matrix](0016.js) [`zYarqqj`](https://codepen.io/6unpnp/pen/zYarqqj?editors=0011)
 
 
 ## n
