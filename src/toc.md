@@ -30,6 +30,7 @@ tabel of content in alphabetical index
 + [show some $\LaTeX$ using MathJax](0012.js) [`JjZYXOQ`](https://codepen.io/6unpnp/pen/JjZYXOQ?editors=0011)
 + [matrix with textarea and MathJax](0013.js)[`jOKbMOE`](https://codepen.io/6unpnp/pen/jOKbMOE?editors=0010)
 + [add and substract two matrix and show result using Mathjax](0014.js) [`jOKbwdg`](https://codepen.io/6unpnp/pen/jOKbwdg?editors=0010)
++ [some functions related to matrix](0015.js) [`jOKbjZd`](https://codepen.io/6unpnp/pen/jOKbjZd?editors=0010)
 
 
 ## n
