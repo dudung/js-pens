@@ -45,6 +45,7 @@ tabel of content in alphabetical index
 ## r
 + [generate random numbers by button click and display it on textarea](0005.js) [`JjZdKyN`](https://codepen.io/6unpnp/pen/JjZdKyN?editors=0010)
 + [change textarea background with random color by button click](0006.js) [`JjZdKZy`](https://codepen.io/6unpnp/pen/JjZdKZy?editors=0010)
++ [some functions related to random matrix](0017.js) [`KKeVzqv`](https://codepen.io/6unpnp/pen/KKeVzqv?editors=0011)
 
 
 ## s

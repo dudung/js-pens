@@ -1,8 +1,9 @@
 /*
   0016.js
   Sparisoma Viridi | https://github.com/dudung
-  Create random integer matrix
+  Create random integer matrix in textarea
   Require: 0015.js or https://codepen.io/6unpnp/pen/jOKbjZd.js
+  Require: 0017.js or https://codepen.io/6unpnp/pen/KKeVzqv.js
   20221101 Start to create this as simple as possible.
 */
 
@@ -31,7 +32,6 @@ function main() {
   
   document.body.append(ta);
   document.body.append(bt);
-  
 }
 
 
@@ -41,42 +41,4 @@ function test_0016() {
   
   var R = randomMatrixInt(Z);
   console.log(R);
-}
-
-
-function matrix2Text(M) {
-  var ROW = M.length;
-  var COL = M[0].length;
-  var t = "";
-  for(var i = 0; i < ROW; i++) {
-    for(var j = 0; j < COL; j++) {
-      t += M[i][j];
-      if(j < COL -1) t+= " ";
-    }
-    t += "\n";
-  }
-  return t;
-  
-}
-
-
-function randomMatrixInt(M, imin, imax) {
-  var ROW = M.length;
-  var COL = M[0].length;
-  var N = [];
-  for(var i = 0; i < ROW; i++) {
-    var row = [];
-    for(var j = 0; j < COL; j++) {
-      var x = randInt(imin, imax);
-      row.push(x);
-    }
-    N.push(row);
-  }
-  return N;
-}
-
-
-function randInt(imin, imax) {
-  var x = Math.floor(Math.random() * (imax - imin + 1)) + imin;
-  return x;
 }
