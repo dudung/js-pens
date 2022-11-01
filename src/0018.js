@@ -18,7 +18,9 @@ function main() {
     float = "left";
   }
   taIn.placeholder = "copy and paste data to textarea\n";
-  taIn.placeholder += "or load test data";
+  taIn.placeholder += "or load test data\n";
+  taIn.placeholder += "and then process data";
+  taIn.placeholder += "\n\nhttps://github.com/rahmanfaiz/final-year-project/blob/main/Boid-Flock/Assets/DATA/speedData1.csv"
   
   var div = document.createElement("div");
   with(div.style) {
@@ -26,6 +28,15 @@ function main() {
     float = "left";
     width = "70px";
   }
+  
+  var bt0 = document.createElement("button");
+  bt0.innerHTML = "Clear data";
+  with(bt0.style) {
+    width = "100%";
+  }
+  bt0.addEventListener("click", function() {
+    taIn.value = "";
+  });
   
   var bt1 = document.createElement("button");
   bt1.innerHTML = "Load test data";
@@ -53,6 +64,7 @@ function main() {
   
   document.body.append(taIn);
   document.body.append(div);
+    div.append(bt0);
     div.append(bt1);
     div.append(bt2);
   document.body.append(taOut);
