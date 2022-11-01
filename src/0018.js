@@ -125,16 +125,25 @@ function processDataFromTo(scr, dest) {
   
   var N = lines.length;
   
-  var boid = [];
-  boid.length = N;
+  var boid = {};
+  console.log(boid);
   
   for(var i = 0; i < N; i++) {
     var cols = lines[i].split(",");
-    boid[i] = {
-      "id": cols[0],
-      "v": parseFloat(cols[1]),
-      "t": parseFloat(cols[2])
-    }
+    if(boid[cols[0]] === undefined) {
+      boid[cols[0]] = {
+        t: [],
+        v: []
+      }
+    }  
+  }
+  
+  console.log(boid);
+  
+  for(var i = 0; i < N; i++) {
+    var cols = lines[i].split(",");
+    boid[cols[0]].v.push(parseFloat(cols[1]));
+    boid[cols[0]].t.push(parseFloat(cols[2]));
   }
   
   console.log(boid);
