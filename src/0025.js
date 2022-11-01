@@ -10,6 +10,9 @@
   0022.js (road.js) https://codepen.io/6unpnp/pen/MWXKLyo.js
   0023.js (display.js) https://codepen.io/6unpnp/pen/rNKxPLY.js
   
+  Refs:
+  https://doi.org/10.1063/5.0038214
+  
 	Sparisoma Viridi | https://github.com/dudung/abm-x
 	Tatang Suheri | https://repository.unikom.ac.id/54572 
 	
@@ -20,6 +23,7 @@
   0527 Add information about libs and update GitHub.
   0528 Create a pen on CodePen, not yet work.
   0529 Add pens to make it works.
+  0535 Add refs as output.
 	20200603
 	0812 Start this app.
 	0913 Put a ref [1].

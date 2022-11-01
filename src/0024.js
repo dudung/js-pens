@@ -10,6 +10,9 @@
   0022.js (road.js) https://codepen.io/6unpnp/pen/MWXKLyo.js
   0023.js (display.js) https://codepen.io/6unpnp/pen/rNKxPLY.js
   
+  Refs:
+  https://doi.org/10.1063/5.0038221
+  
 	Sparisoma Viridi | https://github.com/dudung/abm-x
 	Armi Susandi | https://fitb.itb.ac.id/dr-rer-nat-armi-susandi-mt
 	
@@ -19,6 +22,7 @@
   0448 Rename it from abm-sir.js to 0024.js.
   0450 Update GitHub and codepen.
   0455 Add information about libs and CodePen external pens.
+  0536 Add refs as output.
 	20200608
 	2040 Start this app using abm-odm as the base.
 	2047 Clean some lines.
