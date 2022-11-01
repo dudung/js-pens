@@ -20,13 +20,12 @@ function main() {
   taIn.placeholder = "copy and paste data to textarea\n";
   taIn.placeholder += "or load test data\n";
   taIn.placeholder += "and then process data";
-  taIn.placeholder += "\n\nhttps://github.com/rahmanfaiz/final-year-project/blob/main/Boid-Flock/Assets/DATA/speedData1.csv"
   
   var div = document.createElement("div");
   with(div.style) {
     background = "#eee";
     float = "left";
-    width = "70px";
+    width = "150px";
   }
   
   var bt0 = document.createElement("button");
@@ -53,6 +52,31 @@ function main() {
     width = "100%";
   }
   
+  var ul = document.createElement("ul");
+  var li1 = document.createElement("li");
+  var li2 = document.createElement("li");
+  
+  var link1 = document.createElement("a");
+  link1.innerHTML = "speedData1.csv";
+  link1.href = "https://github.com/rahmanfaiz/"
+    + "final-year-project/blob/main/Boid-Flock/"
+    + "Assets/DATA/speedData1.csv";
+  with(link1.style) {
+    textDecoration = "none";
+    color = "blue";
+  }
+  
+  var link2 = document.createElement("a");
+  link2.innerHTML = "speedData2.csv";
+  link2.href="https://github.com/rahmanfaiz/"
+    + "final-year-project/blob/main/Boid-Flock/"
+    + "Assets/DATA/speedData2.csv";
+  with(link2.style) {
+    textDecoration = "none";
+    color = "blue";
+  }
+  link2.target = "_blank";
+  
   var taOut = document.createElement("textarea");
   taOut.id = "txt-output";
   with(taOut.style) {
@@ -67,6 +91,11 @@ function main() {
     div.append(bt0);
     div.append(bt1);
     div.append(bt2);
+    div.append(ul)
+      ul.append(li1);
+        li1.append(link1);
+      ul.append(li2);
+        li2.append(link2);
   document.body.append(taOut);
 }
 
