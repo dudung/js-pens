@@ -16,7 +16,7 @@
   20221102
   0447 Copy from https://github.com/dudung/butiran.js and
        paste to https://github.com/dudung/js-pens.
-  0448 Rename it from display.js to 0024.js.
+  0448 Rename it from abm-sir.js to 0024.js.
   0450 Update GitHub and codepen.
   0455 Add information about libs and CodePen external pens.
 	20200608
