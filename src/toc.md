@@ -8,6 +8,7 @@ tabel of content in alphabetical index
 + [abm libs: agent.js](0020.js) [`poKgGJR`](https://codepen.io/6unpnp/pen/poKgGJR?editors=0010)
 + [abm libs: city.js](0021.js) [`eYKJxpE`](https://codepen.io/6unpnp/pen/eYKJxpE?editors=0010)
 + [abm libs: road.js](0022.js) [`MWXKLyo`](https://codepen.io/6unpnp/pen/MWXKLyo?editors=0010)
++ [abm libs: display.js](0023.js) [`rNKxPLY`](https://codepen.io/6unpnp/pen/rNKxPLY?editors=0010)
 
 
 ## c
