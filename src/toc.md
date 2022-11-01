@@ -11,6 +11,8 @@ tabel of content in alphabetical index
 + [abm libs: display.js](0023.js) [`rNKxPLY`](https://codepen.io/6unpnp/pen/rNKxPLY?editors=0010)
 + [agent-based model for susceptible-infected-recovered model](0024.js) [`mdKVvrN`](https://codepen.io/6unpnp/pen/mdKVvrN?editors=0010)
 
++ [agent-based model for multiple visits to multiple cities](0025.js) [`VwdegBo`](https://codepen.io/6unpnp/pen/VwdegBo?editors=0011)
+
 
 ## c
 + [copy content between two textarea elements](0001.js) 

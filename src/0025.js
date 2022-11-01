@@ -18,6 +18,8 @@
        paste to https://github.com/dudung/js-pens.
   0526 Rename it from abm-odm.js to 0025.js.
   0527 Add information about libs and update GitHub.
+  0528 Create a pen on CodePen, not yet work.
+  0529 Add pens to make it works.
 	20200603
 	0812 Start this app.
 	0913 Put a ref [1].
