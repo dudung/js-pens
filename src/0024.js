@@ -3,6 +3,13 @@
 	Agent-based model (ABM) and susceptible-infected-recovered
 	(SIR) model
 	
+  Libs:
+  0019.js (matrix.js) https://codepen.io/6unpnp/pen/rNKxodW.js
+  0020.js (agent.js) https://codepen.io/6unpnp/pen/poKgGJR.js
+  0021.js (city.js) https://codepen.io/6unpnp/pen/eYKJxpE.js
+  0022.js (road.js) https://codepen.io/6unpnp/pen/MWXKLyo.js
+  0023.js (display.js) https://codepen.io/6unpnp/pen/rNKxPLY.js
+  
 	Sparisoma Viridi | https://github.com/dudung/abm-x
 	Armi Susandi | https://fitb.itb.ac.id/dr-rer-nat-armi-susandi-mt
 	
@@ -11,6 +18,7 @@
        paste to https://github.com/dudung/js-pens.
   0448 Rename it from display.js to 0024.js.
   0450 Update GitHub and codepen.
+  0455 Add information about libs and CodePen external pens.
 	20200608
 	2040 Start this app using abm-odm as the base.
 	2047 Clean some lines.
