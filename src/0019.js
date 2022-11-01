@@ -1,5 +1,5 @@
 /*
-	0019.js (matrix.js0
+	0019.js (matrix.js)
 	Create and manipulate matrix for abm-odm
 	
 	Sparisoma Viridi | https://github.com/dudung/abm-x
@@ -8,7 +8,7 @@
   0350 Copy from https://github.com/dudung/butiran.js and
        paste to https://github.com/dudung/js-pens.
   0352 Rename it from matrix.js to 0019.js.
-	
+  0357 Update GitHub and codepen.
 	20200603
 	0923 Start this library.
 	0953 Create functions of makeZero and createZeroMatrix.
