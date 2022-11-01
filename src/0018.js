@@ -51,6 +51,9 @@ function main() {
   with(bt2.style) {
     width = "100%";
   }
+  bt2.addEventListener("click", function() {
+    processDataFromTo("csv-input", "txt-output");
+  });
   
   var ul = document.createElement("ul");
     ul.style.marginTop = "0px";
@@ -108,6 +111,13 @@ function main() {
       ul.append(li2);
         li2.append(link2);
   document.body.append(taOut);
+}
+
+
+function processDataFromTo(scr, dest) {
+  var inp = document.getElementById(scr);
+  var out = document.getElementById(dest);
+  out.value = inp.value;
 }
 
 
