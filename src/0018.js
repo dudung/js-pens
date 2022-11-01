@@ -117,16 +117,14 @@ function main() {
 function processDataFromTo(scr, dest) {
   var inp = document.getElementById(scr);
   var out = document.getElementById(dest);
-  //out.value = inp.value;
   
   var lines = inp.value.split("\n");
   lines.shift();
-  if(lines[lines.length - 1] == 0) lines.pop();
-  
   var N = lines.length;
+  if(lines[N - 1] == 0) lines.pop();
+  N = lines.length;
   
   var boid = {};
-  console.log(boid);
   
   for(var i = 0; i < N; i++) {
     var cols = lines[i].split(",");
@@ -138,15 +136,33 @@ function processDataFromTo(scr, dest) {
     }  
   }
   
-  console.log(boid);
-  
   for(var i = 0; i < N; i++) {
     var cols = lines[i].split(",");
     boid[cols[0]].v.push(parseFloat(cols[1]));
     boid[cols[0]].t.push(parseFloat(cols[2]));
   }
   
-  console.log(boid);
+  var id = [];
+  var vavg = [];
+  for(var i in boid) {
+    id.push(i);
+    var N = boid[i].v.length;
+    var sum = 0;
+    for(var j = 0; j < N; j++) {
+      sum += boid[i].v[j];
+    }
+    sum /= N;
+    vavg.push(sum.toFixed(4));
+  }
+  
+  var N = vavg.length;
+  var result = "boid\t<speed>\n";
+  for(var i = 0; i < N; i++) {
+    result += id[i] + "\t" + vavg[i];
+    if(i < N - 1) result += "\n";
+  }
+  
+  out.value = result;
 }
 
 
