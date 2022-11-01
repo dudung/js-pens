@@ -53,8 +53,17 @@ function main() {
   }
   
   var ul = document.createElement("ul");
+    ul.style.marginTop = "0px";
   var li1 = document.createElement("li");
   var li2 = document.createElement("li");
+  
+  var text1 = document.createElement("div");
+  with(text1.style) {
+    width = "100%";
+    paddingTop = "10px";
+    paddingLeft = "10px";
+  }
+  text1.innerHTML = "Examples of data";
   
   var link1 = document.createElement("a");
   link1.innerHTML = "speedData1.csv";
@@ -65,6 +74,7 @@ function main() {
     textDecoration = "none";
     color = "blue";
   }
+  link1.target = "_blank";
   
   var link2 = document.createElement("a");
   link2.innerHTML = "speedData2.csv";
@@ -91,6 +101,7 @@ function main() {
     div.append(bt0);
     div.append(bt1);
     div.append(bt2);
+    div.append(text1);
     div.append(ul)
       ul.append(li1);
         li1.append(link1);
