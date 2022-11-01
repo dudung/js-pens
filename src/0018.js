@@ -117,7 +117,27 @@ function main() {
 function processDataFromTo(scr, dest) {
   var inp = document.getElementById(scr);
   var out = document.getElementById(dest);
-  out.value = inp.value;
+  //out.value = inp.value;
+  
+  var lines = inp.value.split("\n");
+  lines.shift();
+  if(lines[lines.length - 1] == 0) lines.pop();
+  
+  var N = lines.length;
+  
+  var boid = [];
+  boid.length = N;
+  
+  for(var i = 0; i < N; i++) {
+    var cols = lines[i].split(",");
+    boid[i] = {
+      "id": cols[0],
+      "v": parseFloat(cols[1]),
+      "t": parseFloat(cols[2])
+    }
+  }
+  
+  console.log(boid);
 }
 
 
