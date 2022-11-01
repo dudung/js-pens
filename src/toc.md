@@ -4,7 +4,8 @@ tabel of content in alphabetical index
 
 ## a
 + [calculate average of numbers from textarea and display it in other](0003.js) [`mdKJVqb`](https://codepen.io/6unpnp/pen/mdKJVqb?editors=0010)
-+ [abm matrix.js](0019.js) [`rNKxodW`](https://codepen.io/6unpnp/pen/rNKxodW?editors=0010)
++ [abm libs: matrix.js](0019.js) [`rNKxodW`](https://codepen.io/6unpnp/pen/rNKxodW?editors=0010)
++ [abm libs: agent.js](0020.js) [`poKgGJR`](https://codepen.io/6unpnp/pen/poKgGJR?editors=0010)
 
 
 ## c
