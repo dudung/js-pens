@@ -42,7 +42,7 @@ tabel of content in alphabetical index
 + [some functions related to matrix](0015.js) [`jOKbjZd`](https://codepen.io/6unpnp/pen/jOKbjZd?editors=0010)
 + [create random integer matrix](0016.js) [`zYarqqj`](https://codepen.io/6unpnp/pen/zYarqqj?editors=0011)
 + [md libs: vect3.js](0027.js) [`xxzOVvQ`](https://codepen.io/6unpnp/pen/xxzOVvQ?editors=0011)
-+ [md libs: grain.js]() [``]()
++ [md libs: grain.js](0028.js) [`ZEROOYx`](https://codepen.io/6unpnp/pen/ZEROOYx?editors=0011)
 + [md libs: box.js]() [``]()
 
 

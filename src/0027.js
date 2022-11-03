@@ -4,6 +4,7 @@
 	
 	Sparisoma Viridi | dudung@gmail.com
 	
+  20221104
   0524 Copy from https://github.com/dudung/butiran.js and
        paste to https://github.com/dudung/js-pens.
   0425 Rename it from vect3.js to 0027.js.
