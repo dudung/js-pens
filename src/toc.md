@@ -11,10 +11,10 @@ tabel of content in alphabetical index
 + [abm libs: display.js](0023.js) [`rNKxPLY`](https://codepen.io/6unpnp/pen/rNKxPLY?editors=0010)
 + [agent-based model for susceptible-infected-recovered model](0024.js) [`mdKVvrN`](https://codepen.io/6unpnp/pen/mdKVvrN?editors=0010)
 + [agent-based model for multiple visits to multiple cities](0025.js) [`VwdegBo`](https://codepen.io/6unpnp/pen/VwdegBo?editors=0011)
-+ [configuration file for abm-x]() [`eYKzZPe`](https://codepen.io/6unpnp/pen/eYKzZPe?editors=0011)
 
 
 ## c
++ [configuration for abm-x library](0026.js) [`eYKzZPe`](https://codepen.io/6unpnp/pen/eYKzZPe?editors=0011)
 + [copy content between two textarea elements](0001.js) 
 [`NWzPVPa`](https://codepen.io/6unpnp/pen/NWzPVPa?editors=0010)
 + [process content of CSV file](0018.js) [`xxzZrgb`](https://codepen.io/6unpnp/pen/xxzZrgb?editors=0011)
@@ -41,6 +41,10 @@ tabel of content in alphabetical index
 + [add and substract two matrix and show result using Mathjax](0014.js) [`jOKbwdg`](https://codepen.io/6unpnp/pen/jOKbwdg?editors=0010)
 + [some functions related to matrix](0015.js) [`jOKbjZd`](https://codepen.io/6unpnp/pen/jOKbjZd?editors=0010)
 + [create random integer matrix](0016.js) [`zYarqqj`](https://codepen.io/6unpnp/pen/zYarqqj?editors=0011)
++ [md libs: vect3.js](0027.js) [`xxzOVvQ`](https://codepen.io/6unpnp/pen/xxzOVvQ?editors=0011)
++ [md libs: grain.js]() [``]()
++ [md libs: box.js]() [``]()
+
 
 
 ## n
