@@ -10,6 +10,7 @@
   0802 Rename it from spring.js to 0036.js.
   0803 Comment webpack_libs_md_force_spring parts.
   0804 Create on CodePen and save there.
+  0805 Update toc and Github.
 	20180603
 	Create this library from previous force.js and
 	normal.js libraries.
