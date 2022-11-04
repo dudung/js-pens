@@ -29,6 +29,7 @@ tabel of content in alphabetical index
 # f
 + [force in md libs: buoyant.js](0030.js) [`jOKrMqX`](https://codepen.io/6unpnp/pen/jOKrMqX?editors=0011)
 + [force in md libs: drag.js](0031.js) [`wvXWzox`](https://codepen.io/6unpnp/pen/wvXWzox?editors=0011)
++ [force in md libs: electrostatic.js](0032.js) [`dyKXpWW`](https://codepen.io/6unpnp/pen/dyKXpWW?editors=0011)
 
 
 ## h
