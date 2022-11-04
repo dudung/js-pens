@@ -72,3 +72,4 @@ tabel of content in alphabetical index
 
 ## s
 + [calculate sum of numbers from textarea and display it in other](0002.js) [`GRGJoWV`](https://codepen.io/6unpnp/pen/GRGJoWV?editors=0010)
++ [md + abm in stem cells touching nanopattern (not finished)](0037.js) [`QWxEdvq`](https://codepen.io/6unpnp/pen/QWxEdvq?editors=0011)
