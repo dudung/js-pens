@@ -33,6 +33,7 @@ tabel of content in alphabetical index
 + [force in md libs: gravitational.js](0033.js) [`zYaBKdv`](https://codepen.io/6unpnp/pen/zYaBKdv?editors=0011)
 + [force in md libs: magnetic.js](0034.js) [`qBKNaVR`](https://codepen.io/6unpnp/pen/qBKNaVR?editors=0011)
 + [force in md libs: normal.js](0035.js) [`dyKXpdz`](https://codepen.io/6unpnp/pen/dyKXpdz?editors=0011)
++ [force in md libs: spring.js](0036.js) [`VwdjKBr`](https://codepen.io/6unpnp/pen/VwdjKBr?editors=0011)
 
 
 ## h
