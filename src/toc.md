@@ -31,6 +31,7 @@ tabel of content in alphabetical index
 + [force in md libs: drag.js](0031.js) [`wvXWzox`](https://codepen.io/6unpnp/pen/wvXWzox?editors=0011)
 + [force in md libs: electrostatic.js](0032.js) [`dyKXpWW`](https://codepen.io/6unpnp/pen/dyKXpWW?editors=0011)
 + [force in md libs: gravitational.js](0033.js) [`zYaBKdv`](https://codepen.io/6unpnp/pen/zYaBKdv?editors=0011)
++ [force in md libs: magnetic.js](0034.js) [`qBKNaVR`](https://codepen.io/6unpnp/pen/qBKNaVR?editors=0011)
 
 
 ## h
