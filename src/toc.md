@@ -26,6 +26,11 @@ tabel of content in alphabetical index
 + [generate random data in textarea and canvas](0011.js) [`KKepbNM`](https://codepen.io/6unpnp/pen/KKepbNM?editors=0010)
 
 
+# f
++ [force in md libs: buoyant.js](0030.js) [`jOKrMqX`](https://codepen.io/6unpnp/pen/jOKrMqX?editors=0011)
+
+
+
 ## h
 + [hello world with button and textarea](0000.js)
 [`BaVyeBW`](https://codepen.io/6unpnp/pen/BaVyeBW?editors=0010)
@@ -44,7 +49,6 @@ tabel of content in alphabetical index
 + [md libs: vect3.js](0027.js) [`xxzOVvQ`](https://codepen.io/6unpnp/pen/xxzOVvQ?editors=0011)
 + [md libs: grain.js](0028.js) [`ZEROOYx`](https://codepen.io/6unpnp/pen/ZEROOYx?editors=0011)
 + [md libs: box.js](0029.js) [`OJEXXyX`](https://codepen.io/6unpnp/pen/OJEXXyX?editors=0011)
-
 
 
 ## n
