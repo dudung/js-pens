@@ -9,6 +9,10 @@ To clone this repository to your local folder using command line
 $ git clone https://github.com/dudung/js-pens
 ```
 
+## fork
+1. For all JS [fork](https://github.com/dudung/js-pens/fork) on GitHub.
+2. For only necessary JS fork on [CodePen](https://codepen.io/6unpnp).
+
 ## use
 To use code
 + Include JS file in HTML file using<br>
