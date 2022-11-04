@@ -10,8 +10,8 @@ $ git clone https://github.com/dudung/js-pens
 ```
 
 ## fork
-1. For all JS [fork](https://github.com/dudung/js-pens/fork) on GitHub.
-2. For only necessary JS fork on [CodePen](https://codepen.io/6unpnp).
+1. For all JS files [fork on GitHub](https://github.com/dudung/js-pens/fork).
+2. For only necessary JS files [fork on CodePen](https://codepen.io/6unpnp/pens/public).
 
 ## use
 To use code
