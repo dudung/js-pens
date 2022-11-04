@@ -4,6 +4,7 @@
 	
 	Sparisoma Viridi | dudung@gmail.com
 	
+  20221104
   0743 Copy from https://github.com/dudung/butiran.js and
        paste to https://github.com/dudung/js-pens.
   0744 Rename magnetic.js to 0034.js.
