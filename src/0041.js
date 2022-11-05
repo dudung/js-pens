@@ -18,7 +18,7 @@ function main() {
   taL.style.width = "300px";
   taL.style.height = "400px";
   taL.style.overflowY = "scroll";
-  taL.placeholder = "type here (only letter, with or without shift)";
+  taL.placeholder = "type here (only letter, with or without shift, and enter)";
   
   var taR = document.createElement("textarea");
   taR.id = "out";
