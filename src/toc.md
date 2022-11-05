@@ -73,6 +73,7 @@ tabel of content in alphabetical index
 ## q
 + [find roots of quadratic equation](0007.js) [`MWXwjZQ`](https://codepen.io/6unpnp/pen/MWXwjZQ?editors=0010)
 
+
 ## r
 + [generate random numbers by button click and display it on textarea](0005.js) [`JjZdKyN`](https://codepen.io/6unpnp/pen/JjZdKyN?editors=0010)
 + [change textarea background with random color by button click](0006.js) [`JjZdKZy`](https://codepen.io/6unpnp/pen/JjZdKZy?editors=0010)
@@ -82,3 +83,8 @@ tabel of content in alphabetical index
 ## s
 + [calculate sum of numbers from textarea and display it in other](0002.js) [`GRGJoWV`](https://codepen.io/6unpnp/pen/GRGJoWV?editors=0010)
 + [md + abm in stem cells touching nanopattern (not finished)](0037.js) [`QWxEdvq`](https://codepen.io/6unpnp/pen/QWxEdvq?editors=0011)
+
+
+## t
++ [textarea onkeyup event](0041.js) [``]()
+
