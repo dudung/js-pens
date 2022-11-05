@@ -15,6 +15,7 @@ tabel of content in alphabetical index
 
 ## b
 + [buttons with mouseover even change their color](0039.js) [`qBKNezm`](https://codepen.io/6unpnp/pen/qBKNezm?editors=0010)
++ [buttons with two states](0040.js) [``]()
 
 
 ## c
