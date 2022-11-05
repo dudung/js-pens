@@ -26,6 +26,10 @@ tabel of content in alphabetical index
 + [generate random data in textarea and canvas](0011.js) [`KKepbNM`](https://codepen.io/6unpnp/pen/KKepbNM?editors=0010)
 
 
+## e
++ [some elements of HTML](0038.js) [`JjZKqPN`](https://codepen.io/6unpnp/pen/JjZKqPN?editors=0010)
+
+
 # f
 + [force in md libs: buoyant.js](0030.js) [`jOKrMqX`](https://codepen.io/6unpnp/pen/jOKrMqX?editors=0011)
 + [force in md libs: drag.js](0031.js) [`wvXWzox`](https://codepen.io/6unpnp/pen/wvXWzox?editors=0011)
