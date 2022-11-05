@@ -1,6 +1,6 @@
 /*
   0038.js
-  Some elements of HTML with default style
+  Some elements of HTML with not-so default style
   
   Sparisoma Viridi | https://github.com/dudung/js-pens
   
