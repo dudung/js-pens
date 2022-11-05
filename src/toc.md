@@ -70,6 +70,10 @@ tabel of content in alphabetical index
 [`NWzqNzM `](https://codepen.io/6unpnp/pen/NWzqNzM?editors=0010)
 
 
+## p
++ [div for preformatted text with manual CSS coloring](0042.js) [`oNyzzJW`](https://codepen.io/6unpnp/pen/oNyzzJW?editors=0010)
+
+
 ## q
 + [find roots of quadratic equation](0007.js) [`MWXwjZQ`](https://codepen.io/6unpnp/pen/MWXwjZQ?editors=0010)
 
@@ -87,4 +91,3 @@ tabel of content in alphabetical index
 
 ## t
 + [textarea onkeyup event](0041.js) [`ZERpYLZ`](https://codepen.io/6unpnp/pen/ZERpYLZ?editors=0010)
-
