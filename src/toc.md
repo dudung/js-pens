@@ -86,5 +86,5 @@ tabel of content in alphabetical index
 
 
 ## t
-+ [textarea onkeyup event](0041.js) [``]()
++ [textarea onkeyup event](0041.js) [`ZERpYLZ`](https://codepen.io/6unpnp/pen/ZERpYLZ?editors=0010)
 
