@@ -13,6 +13,8 @@
   0512 Can set color but the range still not good.
   0524 Fix color formula.
   0531 Color ok with a little bit flickr, number not ok. Pause to Uni.
+  0535 CodePen and GitHub.
+  0536 Change example of source.
   20221107
   1659 Start this code.
   1722 Create UI elements.
@@ -212,8 +214,8 @@ function update(i, j, M) {
     M[i-1][j+1] = sum;
   } else if(i == ROW-1 && j == COL-1) {
     var sum = M[i][j] + M[i-1][j] + M[i][j-1] + M[i-1][j-1];
-    console.log(M[i][j], M[i-1][j], M[i][j-1], M[i-1][j-1]);
-    console.log(sum);
+    //console.log(M[i][j], M[i-1][j], M[i][j-1], M[i-1][j-1]);
+    //console.log(sum);
     sum = sum * 0.25;
     console.log(sum);
     M[i][j] = sum;
@@ -355,7 +357,7 @@ function loadData() {
     
   var source = document.getElementById("source");
   source.value
-    = "1 0 0 0 0 0 0 1\n"
+    = "0 0 0 1 2 3 2 1\n"
     + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
