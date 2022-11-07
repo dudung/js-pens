@@ -4,6 +4,11 @@
   
   Sparisoma Viridi | https://github.com/dudung/js-pens
   
+  20221108
+  0313 Continue to view sum of elements of a matrix.
+  0328 Sum of elements work but water volume is not conserved.
+  0329 Can reproduce yesterday error N --> M, explode and saturated.
+  0358 Better but not yet right, pause.
   20221107
   1659 Start this code.
   1722 Create UI elements.
@@ -27,6 +32,7 @@
 
 
 var H, I, S;
+var sH, sI, sS;
 var id;
 var t = 0;
 
@@ -56,125 +62,145 @@ function calcData() {
 
 function calculate() {
   H = add(H, S);
-  H = flow(H);
-  H = sub(H, I);
-  H = ge(H, 0)
+  H = average(H);
+  //H = sub(H, I);
+  //H = ge(H, 0)
+  
+  sS += sumOfElements(S);
+  sI += sumOfElements(I);
+  sH = sumOfElements(H);
   
   var res = strFromMatrix(H);
   
   var current = document.getElementById("current");
   current.value = res;
+  current.value += " " + t + " +"
+    + sS + " -"
+    + sI + " "
+    + sH.toFixed(3).padStart(6, ' ');
   
   drawMatrixOnCanvas(H, "grid");
-  console.log(t);
   t++;
+}
+
+
+function sumOfElements(M) {
+  var ROW = M.length;
+  var COL = M[0].length;
+  var sum = 0;
+  for(var i = 0; i < ROW; i++) {
+    for(var j = 0; j < COL; j++) {
+      sum += M[i][j];
+    }
+  }
+  return sum  
 }
 
 
 function drawMatrixOnCanvas(M, id) {
   var can = document.getElementById(id);
-  
-  
 }
 
 
-function flow(M) {
+function average(M) {
   //console.log("flow");
   
   var ROW = M.length;
   var COL = M[0].length;
-  var N = zeroMatrix(ROW, COL);
+  //var N = zeroMatrix(ROW, COL);
   
   /**/
   if(t % 2 == 0) {
     for(var i = 0; i < ROW; i++) {
       for(var j = 0; j < COL; j++) {
-        N[i][j] = update(i, j, M, N, ROW, COL);
+        update(i, j, M);
       }
     }    
   } else {
     for(var j = 0; j < COL; j++) {
       for(var i = 0; i < ROW; i++) {
-        N[i][j] = update(i, j, M, N, ROW, COL);
+        update(i, j, M);
       }
     }        
   }
   /**/
-  return N;  
+  return M;  
 }
 
 
-function update(i, j, M, N) {
+function update(i, j, M) {
   var ROW = M.length;
   var COL = M[0].length;
   if(i == 0 && j == 0) {
     var sum = M[i][j] + M[i+1][j] + M[i][j+1] + M[i+1][j+1];
     sum = sum * 0.25;
-    N[i][j] = sum;
-    //N[i+1][j] = sum;
-    //N[i][j+1] = sum;
-    //N[i+1][j+1] = sum;
+    M[i][j] = sum;
+    M[i+1][j] = sum;
+    M[i][j+1] = sum;
+    M[i+1][j+1] = sum;
   } else if(i == 0 && j == COL-1) {
     var sum = M[i][j] + M[i+1][j] + M[i][j-1] + M[i+1][j-1];
     sum = sum * 0.25;
-    N[i][j] = sum;
-    //N[i+1][j] = sum;
-    //N[i][j-1] = sum;
-    //N[i+1][j-1] = sum;
+    M[i][j] = sum;
+    M[i+1][j] = sum;
+    M[i][j-1] = sum;
+    M[i+1][j-1] = sum;
   } else if(i == ROW-1 && j == 0) {
     var sum = M[i][j] + M[i-1][j] + M[i][j+1] + M[i-1][j+1];
     sum = sum * 0.25;
-    N[i][j] = sum;
-    //N[i-1][j] = sum;
-    //N[i][j+1] = sum;
-    //N[i-1][j+1] = sum;
+    M[i][j] = sum;
+    M[i-1][j] = sum;
+    M[i][j+1] = sum;
+    M[i-1][j+1] = sum;
   } else if(i == ROW-1 && j == COL-1) {
     var sum = M[i][j] + M[i-1][j] + M[i][j-1] + M[i-1][j-1];
+    console.log(M[i][j], M[i-1][j], M[i][j-1], M[i-1][j-1]);
+    console.log(sum);
     sum = sum * 0.25;
-    N[i][j] = sum;
-    //N[i-1][j] = sum;
-    //N[i][j-1] = sum;
-    //N[i-1][j-1] = sum;
+    console.log(sum);
+    M[i][j] = sum;
+    M[i-1][j] = sum;
+    M[i][j-1] = sum;
+    M[i-1][j-1] = sum;
   } else if(i == 0) {
     var sum = M[i][j] + M[i][j-1] + M[i][j+1] + M[i+1][j];
     sum = sum * 0.25;
-    N[i][j] = sum;
-    //N[i][j-1] = sum;
-    //N[i][j+1] = sum;
-    //N[i+1][j] = sum;    
+    M[i][j] = sum;
+    M[i][j-1] = sum;
+    M[i][j+1] = sum;
+    M[i+1][j] = sum;    
   } else if(i == ROW-1) {
     var sum = M[i][j] + M[i][j-1] + M[i][j+1] + M[i-1][j];
     sum = sum * 0.25;
-    N[i][j] = sum;
-    //N[i][j-1] = sum;
-    //N[i][j+1] = sum;
-    //N[i-1][j] = sum;    
+    M[i][j] = sum;
+    M[i][j-1] = sum;
+    M[i][j+1] = sum;
+    M[i-1][j] = sum;    
   } else if(j == 0) {
     var sum = M[i][j] + M[i-1][j] + M[i+1][j] + M[i][j+1];
     sum = sum * 0.25;
-    N[i][j] = sum;
-    //N[i-1][j] = sum;
-    //N[i+1][j] = sum;
-    //N[j][j+1] = sum;    
+    M[i][j] = sum;
+    M[i-1][j] = sum;
+    M[i+1][j] = sum;
+    M[j][j+1] = sum;    
   } else if(j == COL -1) {
     var sum = M[i][j] + M[i-1][j] + M[i+1][j] + M[i][j-1];
     sum = sum * 0.25;
-    N[i][j] = sum;
-    //N[i-1][j] = sum;
-    //N[i+1][j] = sum;
-    //N[j][j-1] = sum;    
+    M[i][j] = sum;
+    M[i-1][j] = sum;
+    M[i+1][j] = sum;
+    M[j][j-1] = sum;    
   } else {
     var sum = M[i][j]
       + M[i-1][j] + M[i+1][j]
       + M[i][j-1] + M[i][j+1];
     sum = sum * 0.20;
-    N[i][j] = sum;
-    //N[i-1][j] = sum;
-    //N[i+1][j] = sum;
-    //N[i][j-1] = sum;
-    //N[i][j+1] = sum;
+    M[i][j] = sum;
+    M[i-1][j] = sum;
+    M[i+1][j] = sum;
+    M[i][j-1] = sum;
+    M[i][j+1] = sum;
   }
-  return N[i][j];
 }
 
 
@@ -220,6 +246,10 @@ function readData() {
   
   var current = document.getElementById("current");
   current.value = strFromMatrix(H);
+  
+  sH = 0;
+  sI = 0;
+  sS = 0;
 }
 
 
