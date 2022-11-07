@@ -93,3 +93,4 @@ tabel of content in alphabetical index
 ## t
 + [textarea onkeyup event](0041.js) [`ZERpYLZ`](https://codepen.io/6unpnp/pen/ZERpYLZ?editors=0010)
 + [try TikZ code using TikZJax](0043.js) [`vYrXQxq`](https://codepen.io/6unpnp/pen/vYrXQxq?editors=0010)
++ [textarea and canvas for displaying matrix](0045.js) [``]()
