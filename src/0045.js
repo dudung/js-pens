@@ -19,6 +19,7 @@
   2218 Test witout infiltration and source, still fails.
   2247 It still fails even flow has been repair for the border.
   2307 It is a little bit better but do not understand why. Pause.
+  2310 Rearrange the operation and it seems work.
   
   refs
   1. url https://www.hec.usace.army.mil/confluence/hmsdocs/hmstrm/surface-runoff/clark-unit-hydrograph-model [20221107].
@@ -55,9 +56,9 @@ function calcData() {
 
 function calculate() {
   H = add(H, S);
+  H = flow(H);
   H = sub(H, I);
   H = ge(H, 0)
-  H = flow(H);
   
   var res = strFromMatrix(H);
   
