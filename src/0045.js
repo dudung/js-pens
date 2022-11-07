@@ -11,6 +11,7 @@
   1747 Load data is done for now.
   1843 Simplify layout of UI.
   1900 Read data from three input textarea elements.
+  1913 Can calc to copy I matrix to ta4 (current).
   
   refs
   1. url https://www.hec.usace.army.mil/confluence/hmsdocs/hmstrm/surface-runoff/clark-unit-hydrograph-model [20221107].
@@ -29,17 +30,24 @@ function main() {
 
 function calcData() {
   console.log("calc data");
+  
+  var res = strFromMatrix(S);
+  
+  var current = document.getElementById("current");
+  current.value = res;
 }
 
 
 function strFromMatrix(M) {
   var ROW = M.length;
-  var COLS = M[0].length;
+  var COL = M[0].length;
   var str = "";
   for(var i = 0; i < ROW; i++) {
     for(var j = 0; j < COL; j++) {
-      
+      str += M[i][j].toString().padStart(3, ' ');
+      if(j < COL-1) str += " ";
     }
+    str += "\n";
   }
   return str;
 }
@@ -109,7 +117,7 @@ function loadData() {
     + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
-    + "0 0 0 0 0 0 0 1";
+    + "0 0 0 0 0 0 0 2";
 }
 
 
