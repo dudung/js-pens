@@ -16,6 +16,7 @@ tabel of content in alphabetical index
 ## b
 + [buttons with two states](0040.js) [`LYrRYYX`](https://codepen.io/6unpnp/pen/LYrRYYX?editors=0010)
 + [buttons with mouseover even change their color](0039.js) [`qBKNezm`](https://codepen.io/6unpnp/pen/qBKNezm?editors=0010)
++ [modify boids.js from Ben Eater to toggle pause with a click](0044.js) [``]()
 
 
 ## c
