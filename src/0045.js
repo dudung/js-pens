@@ -14,6 +14,8 @@
   1913 Can calc to copy I matrix to ta4 (current).
   2022 Resize ta4 larger and reduce can1.
   2037 Flow works, but not yet with the right formulation.
+  2130 Can run with setInterval.
+  2144 Make it symmetrical update for flow matrix.
   
   refs
   1. url https://www.hec.usace.army.mil/confluence/hmsdocs/hmstrm/surface-runoff/clark-unit-hydrograph-model [20221107].
@@ -21,6 +23,8 @@
 
 
 var H, I, S;
+var id;
+var t = 0;
 
 main();
 
@@ -30,9 +34,23 @@ function main() {
 }
 
 
+
 function calcData() {
   //console.log("calc data");
   
+  var bt = event.target;
+  if(bt.innerHTML == "Start") {
+    id = setInterval(calculate, 100);
+    bt.innerHTML = "Stop";
+  } else {
+    clearInterval(id);
+    bt.innerHTML = "Start"
+  }
+  
+}
+
+
+function calculate() {
   H = add(H, S);
   H = sub(H, I);
   H = ge(H, 0)
@@ -42,6 +60,8 @@ function calcData() {
   
   var current = document.getElementById("current");
   current.value = res;
+  
+  t++;
 }
 
 
@@ -51,16 +71,65 @@ function flow(M) {
   var ROW = M.length;
   var COL = M[0].length;
   var N = zeroMatrix(ROW, COL);
-  for(var i = 1; i < ROW-1; i++) {
-    for(var j = 1; j < COL-1; j++) {
-      N[i][j] = 0.125 * (
-        M[i-1][j-1] + M[i-1][j] + M[i-1][j+1]
-        + M[i][j-1]             + M[i][j+1] +
-        M[i+1][j-1] + M[i+1][j] + M[i+1][j+1]
-      );
-    }
+  
+  if(t % 2 == 0) {
+    for(var i = 0; i < ROW; i++) {
+      for(var j = 0; j < COL; j++) {
+        update(i, j, M, N, ROW, COL);
+      }
+    }    
+  } else {
+    for(var j = 0; j < COL; j++) {
+      for(var i = 0; i < ROW; i++) {
+        update(i, j, M, N, ROW, COL);
+      }
+    }        
   }
+  
   return N;  
+}
+
+
+function update(i, j, M, N, ROW, COL) {
+  if(i == 0 && j == 0) {
+    var sum = M[i][j] + M[i+1][j] + M[i][j+1] + M[i+1][j+1];
+    sum /= 4;
+    N[i][j] = sum;
+    N[i+1][j] = sum;
+    N[i][j+1] = sum;
+    N[i+1][j+1] = sum;
+  } else if(i == 0 && j == COL-1) {
+    var sum = M[i][j] + M[i+1][j] + M[i][j-1] + M[i+1][j-1];
+    sum /= 4;
+    N[i][j] = sum;
+    N[i+1][j] = sum;
+    N[i][j-1] = sum;
+    N[i+1][j-1] = sum;
+  } else if(i == ROW-1 && j == 0) {
+    var sum = M[i][j] + M[i-1][j] + M[i][j+1] + M[i-1][j+1];
+    sum /= 4;
+    N[i][j] = sum;
+    N[i-1][j] = sum;
+    N[i][j+1] = sum;
+    N[i-1][j+1] = sum;
+  } else if(i == ROW-1 && j == COL-1) {
+    var sum = M[i][j] + M[i-1][j] + M[i][j-1] + M[i-1][j-1];
+    sum /= 4;
+    N[i][j] = sum;
+    N[i-1][j] = sum;
+    N[i][j-1] = sum;
+    N[i-1][j-1] = sum;
+  } else if(i > 0 && i < ROW-1 && j > 0 && j < COL-1){
+    var sum = M[i][j]
+      + M[i-1][j] + M[i+1][j]
+      + M[i][j-1] + M[i][j+1];
+    sum /= 5;
+    N[i][j] = sum;
+    N[i-1][j] = sum;
+    N[i+1][j] = sum;
+    N[i][j-1] = sum;
+    N[i][j+1] = sum;
+  }
 }
 
 
@@ -159,7 +228,7 @@ function loadData() {
     + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
-    + "0 0 0 0 0 0 0 2";
+    + "1 0 0 0 0 0 0 1";
 }
 
 
@@ -251,7 +320,7 @@ function createUIElements() {
   bt3.style.float = "left";
   
   var bt4 = document.createElement("button");
-  bt4.innerHTML = "Calc";
+  bt4.innerHTML = "Start";
   bt4.style.width = "50px";
   bt4.style.height = "37px";
   bt4.addEventListener("click", calcData);
