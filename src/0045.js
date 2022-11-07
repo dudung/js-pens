@@ -18,6 +18,7 @@
   2144 Make it symmetrical update for flow matrix.
   2218 Test witout infiltration and source, still fails.
   2247 It still fails even flow has been repair for the border.
+  2307 It is a little bit better but do not understand why. Pause.
   
   refs
   1. url https://www.hec.usace.army.mil/confluence/hmsdocs/hmstrm/surface-runoff/clark-unit-hydrograph-model [20221107].
@@ -86,13 +87,13 @@ function flow(M) {
   if(t % 2 == 0) {
     for(var i = 0; i < ROW; i++) {
       for(var j = 0; j < COL; j++) {
-        update(i, j, M, N, ROW, COL);
+        N[i][j] = update(i, j, M, N, ROW, COL);
       }
     }    
   } else {
     for(var j = 0; j < COL; j++) {
       for(var i = 0; i < ROW; i++) {
-        update(i, j, M, N, ROW, COL);
+        N[i][j] = update(i, j, M, N, ROW, COL);
       }
     }        
   }
@@ -101,74 +102,77 @@ function flow(M) {
 }
 
 
-function update(i, j, M, N, ROW, COL) {
+function update(i, j, M, N) {
+  var ROW = M.length;
+  var COL = M[0].length;
   if(i == 0 && j == 0) {
     var sum = M[i][j] + M[i+1][j] + M[i][j+1] + M[i+1][j+1];
     sum = sum * 0.25;
     N[i][j] = sum;
-    N[i+1][j] = sum;
-    N[i][j+1] = sum;
-    N[i+1][j+1] = sum;
+    //N[i+1][j] = sum;
+    //N[i][j+1] = sum;
+    //N[i+1][j+1] = sum;
   } else if(i == 0 && j == COL-1) {
     var sum = M[i][j] + M[i+1][j] + M[i][j-1] + M[i+1][j-1];
     sum = sum * 0.25;
     N[i][j] = sum;
-    N[i+1][j] = sum;
-    N[i][j-1] = sum;
-    N[i+1][j-1] = sum;
+    //N[i+1][j] = sum;
+    //N[i][j-1] = sum;
+    //N[i+1][j-1] = sum;
   } else if(i == ROW-1 && j == 0) {
     var sum = M[i][j] + M[i-1][j] + M[i][j+1] + M[i-1][j+1];
     sum = sum * 0.25;
     N[i][j] = sum;
-    N[i-1][j] = sum;
-    N[i][j+1] = sum;
-    N[i-1][j+1] = sum;
+    //N[i-1][j] = sum;
+    //N[i][j+1] = sum;
+    //N[i-1][j+1] = sum;
   } else if(i == ROW-1 && j == COL-1) {
     var sum = M[i][j] + M[i-1][j] + M[i][j-1] + M[i-1][j-1];
     sum = sum * 0.25;
     N[i][j] = sum;
-    N[i-1][j] = sum;
-    N[i][j-1] = sum;
-    N[i-1][j-1] = sum;
+    //N[i-1][j] = sum;
+    //N[i][j-1] = sum;
+    //N[i-1][j-1] = sum;
   } else if(i == 0) {
     var sum = M[i][j] + M[i][j-1] + M[i][j+1] + M[i+1][j];
     sum = sum * 0.25;
     N[i][j] = sum;
-    N[i][j-1] = sum;
-    N[i][j+1] = sum;
-    N[i+1][j] = sum;    
+    //N[i][j-1] = sum;
+    //N[i][j+1] = sum;
+    //N[i+1][j] = sum;    
   } else if(i == ROW-1) {
     var sum = M[i][j] + M[i][j-1] + M[i][j+1] + M[i-1][j];
     sum = sum * 0.25;
     N[i][j] = sum;
-    N[i][j-1] = sum;
-    N[i][j+1] = sum;
-    N[i-1][j] = sum;    
+    //N[i][j-1] = sum;
+    //N[i][j+1] = sum;
+    //N[i-1][j] = sum;    
   } else if(j == 0) {
     var sum = M[i][j] + M[i-1][j] + M[i+1][j] + M[i][j+1];
     sum = sum * 0.25;
     N[i][j] = sum;
-    N[i-1][j] = sum;
-    N[i+1][j] = sum;
-    N[j][j+1] = sum;    
+    //N[i-1][j] = sum;
+    //N[i+1][j] = sum;
+    //N[j][j+1] = sum;    
   } else if(j == COL -1) {
     var sum = M[i][j] + M[i-1][j] + M[i+1][j] + M[i][j-1];
     sum = sum * 0.25;
     N[i][j] = sum;
-    N[i-1][j] = sum;
-    N[i+1][j] = sum;
-    N[j][j-1] = sum;    
+    //N[i-1][j] = sum;
+    //N[i+1][j] = sum;
+    //N[j][j-1] = sum;    
   } else {
     var sum = M[i][j]
       + M[i-1][j] + M[i+1][j]
       + M[i][j-1] + M[i][j+1];
     sum = sum * 0.20;
     N[i][j] = sum;
-    N[i-1][j] = sum;
-    N[i+1][j] = sum;
-    N[i][j-1] = sum;
-    N[i][j+1] = sum;
+    //N[i-1][j] = sum;
+    //N[i+1][j] = sum;
+    //N[i][j-1] = sum;
+    //N[i][j+1] = sum;
   }
+  return N[i][j];
 }
 
 
