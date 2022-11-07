@@ -66,6 +66,7 @@ function calculate() {
   current.value = res;
   
   drawMatrixOnCanvas(H, "grid");
+  console.log(t);
   t++;
 }
 
