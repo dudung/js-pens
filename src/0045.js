@@ -32,6 +32,19 @@ function calcData() {
 }
 
 
+function strFromMatrix(M) {
+  var ROW = M.length;
+  var COLS = M[0].length;
+  var str = "";
+  for(var i = 0; i < ROW; i++) {
+    for(var j = 0; j < COL; j++) {
+      
+    }
+  }
+  return str;
+}
+
+
 function readData() {
   console.log("read data");
   
