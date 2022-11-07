@@ -16,6 +16,8 @@
   2037 Flow works, but not yet with the right formulation.
   2130 Can run with setInterval.
   2144 Make it symmetrical update for flow matrix.
+  2218 Test witout infiltration and source, still fails.
+  2247 It still fails even flow has been repair for the border.
   
   refs
   1. url https://www.hec.usace.army.mil/confluence/hmsdocs/hmstrm/surface-runoff/clark-unit-hydrograph-model [20221107].
@@ -61,7 +63,15 @@ function calculate() {
   var current = document.getElementById("current");
   current.value = res;
   
+  drawMatrixOnCanvas(H, "grid");
   t++;
+}
+
+
+function drawMatrixOnCanvas(M, id) {
+  var can = document.getElementById(id);
+  
+  
 }
 
 
@@ -72,6 +82,7 @@ function flow(M) {
   var COL = M[0].length;
   var N = zeroMatrix(ROW, COL);
   
+  /**/
   if(t % 2 == 0) {
     for(var i = 0; i < ROW; i++) {
       for(var j = 0; j < COL; j++) {
@@ -85,7 +96,7 @@ function flow(M) {
       }
     }        
   }
-  
+  /**/
   return N;  
 }
 
@@ -93,37 +104,65 @@ function flow(M) {
 function update(i, j, M, N, ROW, COL) {
   if(i == 0 && j == 0) {
     var sum = M[i][j] + M[i+1][j] + M[i][j+1] + M[i+1][j+1];
-    sum /= 4;
+    sum = sum * 0.25;
     N[i][j] = sum;
     N[i+1][j] = sum;
     N[i][j+1] = sum;
     N[i+1][j+1] = sum;
   } else if(i == 0 && j == COL-1) {
     var sum = M[i][j] + M[i+1][j] + M[i][j-1] + M[i+1][j-1];
-    sum /= 4;
+    sum = sum * 0.25;
     N[i][j] = sum;
     N[i+1][j] = sum;
     N[i][j-1] = sum;
     N[i+1][j-1] = sum;
   } else if(i == ROW-1 && j == 0) {
     var sum = M[i][j] + M[i-1][j] + M[i][j+1] + M[i-1][j+1];
-    sum /= 4;
+    sum = sum * 0.25;
     N[i][j] = sum;
     N[i-1][j] = sum;
     N[i][j+1] = sum;
     N[i-1][j+1] = sum;
   } else if(i == ROW-1 && j == COL-1) {
     var sum = M[i][j] + M[i-1][j] + M[i][j-1] + M[i-1][j-1];
-    sum /= 4;
+    sum = sum * 0.25;
     N[i][j] = sum;
     N[i-1][j] = sum;
     N[i][j-1] = sum;
     N[i-1][j-1] = sum;
-  } else if(i > 0 && i < ROW-1 && j > 0 && j < COL-1){
+  } else if(i == 0) {
+    var sum = M[i][j] + M[i][j-1] + M[i][j+1] + M[i+1][j];
+    sum = sum * 0.25;
+    N[i][j] = sum;
+    N[i][j-1] = sum;
+    N[i][j+1] = sum;
+    N[i+1][j] = sum;    
+  } else if(i == ROW-1) {
+    var sum = M[i][j] + M[i][j-1] + M[i][j+1] + M[i-1][j];
+    sum = sum * 0.25;
+    N[i][j] = sum;
+    N[i][j-1] = sum;
+    N[i][j+1] = sum;
+    N[i-1][j] = sum;    
+  } else if(j == 0) {
+    var sum = M[i][j] + M[i-1][j] + M[i+1][j] + M[i][j+1];
+    sum = sum * 0.25;
+    N[i][j] = sum;
+    N[i-1][j] = sum;
+    N[i+1][j] = sum;
+    N[j][j+1] = sum;    
+  } else if(j == COL -1) {
+    var sum = M[i][j] + M[i-1][j] + M[i+1][j] + M[i][j-1];
+    sum = sum * 0.25;
+    N[i][j] = sum;
+    N[i-1][j] = sum;
+    N[i+1][j] = sum;
+    N[j][j-1] = sum;    
+  } else {
     var sum = M[i][j]
       + M[i-1][j] + M[i+1][j]
       + M[i][j-1] + M[i][j+1];
-    sum /= 5;
+    sum = sum * 0.20;
     N[i][j] = sum;
     N[i-1][j] = sum;
     N[i+1][j] = sum;
@@ -206,13 +245,13 @@ function loadData() {
     + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
-    + "0 0 0 0 0 0 0 0";
+    + "0 0 0 0 0 0 0 9";
   
   var infil = document.getElementById("infil");
   infil.value
-    = "1 1 1 0 0 0 0 0\n"
-    + "1 1 0 0 0 0 0 0\n"
-    + "1 0 0 0 0 0 0 0\n"
+    = "0 0 0 0 0 0 0 0\n"
+    + "0 0 0 0 0 0 0 0\n"
+    + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
@@ -221,14 +260,14 @@ function loadData() {
     
   var source = document.getElementById("source");
   source.value
-    = "0 0 0 0 0 0 0 1\n"
+    = "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
-    + "1 0 0 0 0 0 0 1";
+    + "0 0 0 0 0 0 0 0";
 }
 
 
@@ -327,6 +366,7 @@ function createUIElements() {
   bt4.style.float = "left";
   
   var can1 = document.createElement("canvas");
+  can1.id = "grid";
   can1.width = "146";
   can1.style.width = can1.width + "px";
   can1.height = "146";
