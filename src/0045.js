@@ -12,6 +12,8 @@
   1843 Simplify layout of UI.
   1900 Read data from three input textarea elements.
   1913 Can calc to copy I matrix to ta4 (current).
+  2022 Resize ta4 larger and reduce can1.
+  2037 Flow works, but not yet with the right formulation.
   
   refs
   1. url https://www.hec.usace.army.mil/confluence/hmsdocs/hmstrm/surface-runoff/clark-unit-hydrograph-model [20221107].
@@ -29,12 +31,49 @@ function main() {
 
 
 function calcData() {
-  console.log("calc data");
+  //console.log("calc data");
   
-  var res = strFromMatrix(S);
+  H = add(H, S);
+  H = sub(H, I);
+  H = ge(H, 0)
+  H = flow(H);
+  
+  var res = strFromMatrix(H);
   
   var current = document.getElementById("current");
   current.value = res;
+}
+
+
+function flow(M) {
+  //console.log("flow");
+  
+  var ROW = M.length;
+  var COL = M[0].length;
+  var N = zeroMatrix(ROW, COL);
+  for(var i = 1; i < ROW-1; i++) {
+    for(var j = 1; j < COL-1; j++) {
+      N[i][j] = 0.125 * (
+        M[i-1][j-1] + M[i-1][j] + M[i-1][j+1]
+        + M[i][j-1]             + M[i][j+1] +
+        M[i+1][j-1] + M[i+1][j] + M[i+1][j+1]
+      );
+    }
+  }
+  return N;  
+}
+
+
+function ge(M, x) {
+  var ROW = M.length;
+  var COL = M[0].length;
+  var N = zeroMatrix(ROW, COL);
+  for(var i = 0; i < ROW; i++) {
+    for(var j = 0; j < COL; j++) {
+      N[i][j] = M[i][j] < x ? x : M[i][j];
+    }
+  }
+  return N;
 }
 
 
@@ -44,7 +83,7 @@ function strFromMatrix(M) {
   var str = "";
   for(var i = 0; i < ROW; i++) {
     for(var j = 0; j < COL; j++) {
-      str += M[i][j].toString().padStart(3, ' ');
+      str += M[i][j].toFixed(3).padStart(6, ' ');
       if(j < COL-1) str += " ";
     }
     str += "\n";
@@ -54,7 +93,7 @@ function strFromMatrix(M) {
 
 
 function readData() {
-  console.log("read data");
+  //console.log("read data");
   
   var height = document.getElementById("height");
   H = matrixFromStr(height.value);
@@ -64,6 +103,9 @@ function readData() {
   
   var source = document.getElementById("source");
   S = matrixFromStr(source.value);
+  
+  var current = document.getElementById("current");
+  current.value = strFromMatrix(H);
 }
 
 
@@ -84,7 +126,7 @@ function matrixFromStr(str) {
 
 
 function loadData() {
-  console.log("load data");
+  //console.log("load data");
   
   var height = document.getElementById("height");
   height.value
@@ -122,7 +164,7 @@ function loadData() {
 
 
 function clearData() {
-  console.log("clear data");
+  //console.log("clear data");
   
   var height = document.getElementById("height");
   height.value = "";
@@ -181,7 +223,7 @@ function createUIElements() {
   var ta4 = document.createElement("textarea");
   ta4.id = "current";
   ta4.style.overflowY = "scroll";
-  ta4.style.width = "354px";
+  ta4.style.width = "436px";
   ta4.style.height = "142px";
   ta4.style.float = "left";
   ta4.placeholder = "results"
@@ -216,7 +258,7 @@ function createUIElements() {
   bt4.style.float = "left";
   
   var can1 = document.createElement("canvas");
-  can1.width = "228";
+  can1.width = "146";
   can1.style.width = can1.width + "px";
   can1.height = "146";
   can1.style.height = can1.height + "px";
