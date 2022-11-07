@@ -9,6 +9,10 @@
   0328 Sum of elements work but water volume is not conserved.
   0329 Can reproduce yesterday error N --> M, explode and saturated.
   0358 Better but not yet right, pause.
+  0436 Without source and infiltration water not too conserved but ok.
+  0512 Can set color but the range still not good.
+  0524 Fix color formula.
+  0531 Color ok with a little bit flickr, number not ok. Pause to Uni.
   20221107
   1659 Start this code.
   1722 Create UI elements.
@@ -32,7 +36,7 @@
 
 
 var H, I, S;
-var sH, sI, sS;
+var isH, sH, sI, sS;
 var id;
 var t = 0;
 
@@ -56,15 +60,14 @@ function calcData() {
     clearInterval(id);
     bt.innerHTML = "Start"
   }
-  
 }
 
 
 function calculate() {
   H = add(H, S);
+  H = sub(H, I);
+  H = ge(H, 0)
   H = average(H);
-  //H = sub(H, I);
-  //H = ge(H, 0)
   
   sS += sumOfElements(S);
   sI += sumOfElements(I);
@@ -77,6 +80,7 @@ function calculate() {
   current.value += " " + t + " +"
     + sS + " -"
     + sI + " "
+    + isH + " "
     + sH.toFixed(3).padStart(6, ' ');
   
   drawMatrixOnCanvas(H, "grid");
@@ -97,8 +101,63 @@ function sumOfElements(M) {
 }
 
 
+function minMaxOfElements(M) {
+  var ROW = M.length;
+  var COL = M[0].length;
+  var min = M[0][0];
+  var max = M[0][0];
+  for(var i = 0; i < ROW; i++) {
+    for(var j = 0; j < COL; j++) {
+      if(min > M[i][j]) min = M[i][j];
+      if(max < M[i][j]) max = M[i][j];
+    }
+  }
+  return [min, max];  
+}
+
+
 function drawMatrixOnCanvas(M, id) {
   var can = document.getElementById(id);
+  var ctx = can.getContext("2d");
+  ctx.clearRect(0, 0, can.width, can.height);
+  
+  var cmin, cmax;
+  [cmin, cmax] = minMaxOfElements(M);
+  
+  var ROW = M.length;
+  var COL = M[0].length;
+  color = zeroMatrix(ROW, COL);
+  
+  for(var i = 0; i < ROW; i++) {
+    for(var j = 0; j < COL; j++) {
+      var c = (M[i][j] - cmin) / (cmax - cmin);
+      b = 255;
+      r = Math.floor((1 - c) * 255);
+      g = Math.floor((1 - c) * 255);
+      
+      r = (r > 255) ? 255 : r;
+      g = (g > 255) ? 2545 : g;
+      
+      color[i][j] = "#"
+        + r.toString(16)
+        + g.toString(16)
+        + b.toString(16);
+    }
+  }
+  
+  var dx = 16;
+  var dy = 16;
+  var lx = 15;
+  var ly = 15;
+  
+  for(var i = 0; i < ROW; i++) {
+    for(var j = 0; j < COL; j++) {
+      ctx.fillStyle = color[i][j];
+      var x = dx * j;
+      var y = dy * i;
+      ctx.fillRect(x, y, lx, ly);
+    }
+  }
 }
 
 
@@ -107,7 +166,6 @@ function average(M) {
   
   var ROW = M.length;
   var COL = M[0].length;
-  //var N = zeroMatrix(ROW, COL);
   
   /**/
   if(t % 2 == 0) {
@@ -247,6 +305,7 @@ function readData() {
   var current = document.getElementById("current");
   current.value = strFromMatrix(H);
   
+  isH = sumOfElements(H);
   sH = 0;
   sI = 0;
   sS = 0;
@@ -292,11 +351,11 @@ function loadData() {
     + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
-    + "0 0 0 0 0 0 0 0";
+    + "1 1 1 0 0 0 0 0";
     
   var source = document.getElementById("source");
   source.value
-    = "0 0 0 0 0 0 0 0\n"
+    = "1 0 0 0 0 0 0 1\n"
     + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
     + "0 0 0 0 0 0 0 0\n"
