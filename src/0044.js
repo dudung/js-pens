@@ -1,6 +1,7 @@
 /*
   0044.js
-  Modify animation in boids.js from Ben Eater [1] and toggle pause with a click.
+  Modify animation in boids.js from Ben Eater [1]
+  and toggle pause with a click
   
   Sparisoma Viridi | https://github.com/dudung/js-pens
   
