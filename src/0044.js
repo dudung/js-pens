@@ -1,5 +1,5 @@
 /*
-  0043.js
+  0044.js
   Modify animation in boids.js from Ben Eater [1] and toggle pause with a click.
   
   Sparisoma Viridi | https://github.com/dudung/js-pens
@@ -8,6 +8,7 @@
   1249 Try it after discussion with rahmanfaiz.
   1259 It works locally using raw.githack.com [2].
   1459 Able to hack the callback function to animationLoop2.
+  1511 Make CodePen, update GitHub, and inform rahmanfaiz.
   
   refs
   1. url https://github.com/beneater/boids/blob/master/boids.js [20221107].
