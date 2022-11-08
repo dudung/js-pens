@@ -4,6 +4,8 @@
   
   Sparisoma Viridi | https://github.com/dudung/js-pens
   
+  20221109
+  0549 Finish, move to CodePend and GitHub.
   20221108
   1928 Start it for [1].
   

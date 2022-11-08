@@ -79,7 +79,7 @@ tabel of content in alphabetical index
 
 ## q
 + [find roots of quadratic equation](0007.js) [`MWXwjZQ`](https://codepen.io/6unpnp/pen/MWXwjZQ?editors=0010)
-+ [some question for a quiz using JS](0046.js) [``]()
++ [some question for a quiz using JS](0046.js) [`VwdPePw`](https://codepen.io/6unpnp/pen/VwdPePw?editors=0010)
 
 
 ## r
