@@ -8,6 +8,8 @@
   0929 Update GitHub with initial layout but not functioned yet.
   2112 Make buttons and textarea toggle disable or enable.
   2225 Clear canvas.
+  20121223
+  0512 Test drawCircle() for different COLS and it works.
 */
 
 
@@ -82,12 +84,13 @@ function clickButton() {
     var ctx = can.getContext("2d");
     ctx.clearRect(0, 0, XMAX, YMIN);
   } else if(btn == "Load") {
-    ta.value = getDefaultParameters();
+    ta.value = generateDefaultParameters();
     document.getElementById("Read").disabled = false;
     document.getElementById("Start").disabled = true;
   } else if(btn == "Read") {
     document.getElementById("Start").disabled = false;
-    [radius, rows, cols, speed] = readParameters(ta.value);
+    var keys = ["RADIUS", "ROWS", "COLS", "SPEED"];
+    [radius, rows, cols, speed] = readParameters(ta.value, keys);
     setCoordinatesRanges();
   } else if(btn == "Start") {
     console.log("Start simulation");
@@ -97,7 +100,9 @@ function clickButton() {
     document.getElementById("Read").disabled = true;
     document.getElementById("Params").disabled = true;
     
-    drawCircle(radius, cols);
+    var X, Y;
+    [X, Y] = generateCirclePoints(radius, cols);
+    drawCircle([X, Y]);
   } else {
     console.log("Stop simulation");      
     event.target.innerHTML = "Start";

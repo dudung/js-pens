@@ -9,6 +9,8 @@
   1937 Read parameters from string with newline characters.
   2052 Initialize parameters but not yet true.
   2248 Change rows to 20 as default value.
+  20221223
+  0455 set to generate in DefaultParameters.
 */
 
 var radius, rows, cols, speed;
@@ -36,7 +38,7 @@ function initializeParameters() {
 }
 
 
-function getDefaultParameters() {
+function generateDefaultParameters() {
   console.log("Get default parameters");
   
   var s = "";
@@ -48,7 +50,7 @@ function getDefaultParameters() {
 }
 
 
-function readParameters(str) {
+function readParameters(str, keys) {
   console.log("Read parameters");
   
   var lines = str.split('\n');
@@ -59,10 +61,10 @@ function readParameters(str) {
       var key = words[0];
       var val = parseInt(words[1]);
       
-      if(key == "RADIUS") radius = val;
-      if(key == "ROWS") rows = val;
-      if(key == "COLS") cols = val;
-      if(key == "SPEED") speed = val;
+      if(key == keys[0]) radius = val;
+      if(key == keys[1]) rows = val;
+      if(key == keys[2]) cols = val;
+      if(key == keys[3]) speed = val;
     }
   }
   

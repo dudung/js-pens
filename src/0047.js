@@ -9,6 +9,9 @@
   2138 Use getBoundingClientRect() of element with size 100%.
   2245 Test closePath() before stroke() in context("2d").
   2247 Able to draw circle from points.
+  20221223
+  0513 Find out that changing property of canvas will clear it.
+  0542 Seperate generate points and draw the circle.
 */
 
 
@@ -36,7 +39,9 @@ function transform([x, y]) {
 }
 
 
-function drawCircle(R, N) {
+function generateCirclePoints(R, N) {
+  console.log("Generate points for circle");
+  
   var dq = 2 * Math.PI / N;
   
   var x = [];
@@ -57,7 +62,14 @@ function drawCircle(R, N) {
     X.push(XX)
     Y.push(YY);
   }
-  
+  return [X, Y];
+}
+
+
+function drawCircle([X, Y]) {
+  console.log("Draw circle using polyline")
+
+  var N = Math.min(X.length, Y.length);
   var can = document.getElementById("Drawing");
   var ctx = can.getContext("2d");
   ctx.lineWidth = 1;
