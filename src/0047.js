@@ -83,6 +83,25 @@ function drawCircle([X, Y]) {
 }
 
 
+function generatePolarGridsPoints(radius, rows, cols) {
+  var R = radius;
+  var N = rows;
+  var M = cols;
+  
+  var sqrtsum = 0;
+  for(var i = 0; i < N; i++) {
+    sqrtsum =+ Math.sqrt(i + 1);
+  }
+  var R1 = R / sqrtsum;
+  
+  var RN = [];
+  for(var i = 0; i < N; i++) {
+    var rn = R1 * Math.sqrt{i + 1};
+    RN.push(rn);
+  }
+}
+
+
 function drawGrids(radius, rows, cols) {
   console.log("Draw grids in the form of annulus sector")
 }
