@@ -18,10 +18,13 @@
     url https://raw.githack.com/
     url https://raw.githack.com/beneater/boids/master/boids.js
     -->
+    
+    <script src="../src/0047.js"></script>    
+    
+    <!--
     <script src="../src/0044.js"></script>
     <script src="https://raw.githack.com/beneater/boids/master/boids.js"></script>
     
-    <!--
     <script src="../src/0026.js"></script> // https://codepen.io/6unpnp/pen/eYKzZPe.js
     
     <script src="../src/0019.js"></script> // https://codepen.io/6unpnp/pen/rNKxodW.js
