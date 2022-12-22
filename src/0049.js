@@ -7,6 +7,7 @@
   20221222
   0929 Update GitHub with initial layout but not functioned yet.
   2112 Make buttons and textarea toggle disable or enable.
+  2225 Clear canvas.
 */
 
 
@@ -77,6 +78,9 @@ function clickButton() {
     ta.value = "";
     document.getElementById("Read").disabled = true;
     document.getElementById("Start").disabled = true;
+    var can = document.getElementById("Drawing");
+    var ctx = can.getContext("2d");
+    ctx.clearRect(0, 0, XMAX, YMIN);
   } else if(btn == "Load") {
     ta.value = getDefaultParameters();
     document.getElementById("Read").disabled = false;
@@ -92,6 +96,8 @@ function clickButton() {
     document.getElementById("Load").disabled = true;
     document.getElementById("Read").disabled = true;
     document.getElementById("Params").disabled = true;
+    
+    drawCircle(radius, cols);
   } else {
     console.log("Stop simulation");      
     event.target.innerHTML = "Start";

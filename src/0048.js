@@ -8,6 +8,7 @@
   1856 Start the default parameters definition.
   1937 Read parameters from string with newline characters.
   2052 Initialize parameters but not yet true.
+  2248 Change rows to 20 as default value.
 */
 
 var radius, rows, cols, speed;
@@ -40,8 +41,8 @@ function getDefaultParameters() {
   
   var s = "";
   s += "RADIUS 10\n";
-  s += "ROWS    4\n";
-  s += "COLS    5\n";
+  s += "ROWS    5\n";
+  s += "COLS    20\n";
   s += "SPEED   2\n";
   return s;
 }
