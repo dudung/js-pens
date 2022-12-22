@@ -6,6 +6,7 @@
   
   20221222
   1900 Make an empty function.
+  2138 Use getBoundingClientRect() of element with size 100%.
 */
 
 
@@ -13,6 +14,16 @@
 
 function setCoordinatesRanges() {
   console.log("Set coordinates");
+  
+  xmin = -radius;
+  xmax = radius;
+  ymin = -radius;
+  ymax = radius;
+  
+  XMAX = document.getElementById("Drawin
+    .getBoundingClientRect().width;
+  YMIN = document.getElementById("Drawing")
+    .getBoundingClientRect().height;
 }
 
 

@@ -26,7 +26,7 @@ function initializeParameters() {
   XMIN = 0;
   XMAX = 100;
   YMIN = 100;
-  YMIN = 0;
+  YMAX = 0;
 
   xmin = -1;
   xmax = 1;
