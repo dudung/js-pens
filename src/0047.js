@@ -9,11 +9,15 @@
 */
 
 
-var radius = 0;
-var rows = 1;
-var cols = 1;
-var speed = 0;
+
+
+function setCoordinatesRanges() {
+  console.log("Set coordinates");
+}
 
 
 function drawGrids(radius, rows, cols) {
+  console.log("Draw grids in the form of annulus sector")
 }
+
+

@@ -7,10 +7,37 @@
   20221222
   1856 Start the default parameters definition.
   1937 Read parameters from string with newline characters.
+  2052 Initialize parameters but not yet true.
 */
+
+var radius, rows, cols, speed;
+var XMIN, XMAX, YMIN, YMAX;
+var xmin, xmax, ymin, ymax;
+
+
+function initializeParameters() {
+  console.log("Initialize parameters");
+  
+  radius = 1;
+  rows = 1;
+  cols = 1;
+  speed = 1;
+
+  XMIN = 0;
+  XMAX = 100;
+  YMIN = 100;
+  YMIN = 0;
+
+  xmin = -1;
+  xmax = 1;
+  ymin = -1;
+  ymax = 1;
+}
 
 
 function getDefaultParameters() {
+  console.log("Get default parameters");
+  
   var s = "";
   s += "RADIUS 10\n";
   s += "ROWS    4\n";
@@ -19,7 +46,10 @@ function getDefaultParameters() {
   return s;
 }
 
+
 function readParameters(str) {
+  console.log("Read parameters");
+  
   var lines = str.split('\n');
   
   for(var l of lines) {
