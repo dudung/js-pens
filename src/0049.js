@@ -100,9 +100,16 @@ function clickButton() {
     document.getElementById("Read").disabled = true;
     document.getElementById("Params").disabled = true;
     
+    /*
     var X, Y;
     [X, Y] = generateCirclePoints(radius, cols);
     drawCircle([X, Y]);
+    */
+    
+    var rn, qn;
+    [rn, qn] = generatePolarGridsPoints(radius, rows, cols);
+    drawGridPoints(rn, qn);
+    
   } else {
     console.log("Stop simulation");      
     event.target.innerHTML = "Start";

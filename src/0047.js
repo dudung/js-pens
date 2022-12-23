@@ -92,7 +92,7 @@ function generatePolarGridsPoints(radius, rows, cols) {
   
   var rn = [];
   for(var i = 0; i < rows; i++) {
-    var ri = r1 * Math.sqrt{i + 1};
+    var ri = r1 * Math.sqrt(i + 1);
     rn.push(ri);
   }
   
@@ -102,6 +102,40 @@ function generatePolarGridsPoints(radius, rows, cols) {
     var qi = dq * i;
     qn.push(qi);
   }
+  
+  return [rn, qn];
+}
+
+
+function drawGridPoints(rn, qn) {
+  var rows = rn.length;
+  var cols = qn.length;
+  
+  var X = [];
+  var Y = [];
+  for(var i = 0; i < rows; i++) {
+    for(var j = 0; j < cols; j++) {
+      var x = rn[i] * Math.cos(qn[j]);
+      var y = rn[i] * Math.sin(qn[j]);
+      
+      var XX, YY;
+      [XX, YY] = transform([x, y]);
+      X.push(XX);
+      Y.push(YY);
+    }
+  }
+  
+  var N = Math.min(X.length, Y.length);
+  var can = document.getElementById("Drawing");
+  var ctx = can.getContext("2d");
+  ctx.lineWidth = 1;
+  ctx.strokeStyle = "#f00";
+  ctx.beginPath();
+  for(var i = 0; i < N; i++) {
+    ctx.lineTo(X[i], Y[i]);
+  }
+  ctx.closePath();
+  ctx.stroke();  
 }
 
 
