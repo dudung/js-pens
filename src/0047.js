@@ -84,20 +84,23 @@ function drawCircle([X, Y]) {
 
 
 function generatePolarGridsPoints(radius, rows, cols) {
-  var R = radius;
-  var N = rows;
-  var M = cols;
-  
   var sqrtsum = 0;
-  for(var i = 0; i < N; i++) {
-    sqrtsum =+ Math.sqrt(i + 1);
+  for(var i = 0; i < rows; i++) {
+    sqrtsum += Math.sqrt(i + 1);
   }
-  var R1 = R / sqrtsum;
+  var r1 = radius / sqrtsum;
   
-  var RN = [];
-  for(var i = 0; i < N; i++) {
-    var rn = R1 * Math.sqrt{i + 1};
-    RN.push(rn);
+  var rn = [];
+  for(var i = 0; i < rows; i++) {
+    var ri = r1 * Math.sqrt{i + 1};
+    rn.push(ri);
+  }
+  
+  var qn = [];
+  var dq = 2 * Math.PI / cols; 
+  for(var i = 0; i < cols; i++) {
+    var qi = dq * i;
+    qn.push(qi);
   }
 }
 
