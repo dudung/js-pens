@@ -108,8 +108,10 @@ function clickButton() {
     
     var rn, qn;
     [rn, qn] = generatePolarGridsPoints(radius, rows, cols);
-    drawGridPoints(rn, qn);
-    
+    //drawGridPoints(rn, qn);
+    //drawGrids(rn, qn);
+    var G = createGrids(rn, qn);
+    drawGrids2(G);
   } else {
     console.log("Stop simulation");      
     event.target.innerHTML = "Start";
