@@ -43,8 +43,8 @@ function generateDefaultParameters() {
   
   var s = "";
   s += "RADIUS 10\n";
-  s += "ROWS    5\n";
-  s += "COLS    20\n";
+  s += "ROWS    10\n";
+  s += "COLS    36\n";
   s += "SPEED   2\n";
   return s;
 }
