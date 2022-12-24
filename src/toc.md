@@ -55,14 +55,14 @@ tabel of content in alphabetical index
 
 ## h
 + [hello world with button and textarea](0000.js)
-[`BaVyeBW`](https://codepen.io/6unpnp/pen/BaVyeBW?editors=0010)
+[`BaVyeBW`](https://codepen.io/6unpnp/pen/BaVyeBW?editors=0011)
 
 
 ## i
-+ [setInterval and clearInterval triggered by buttons](0049.js) [`JjBdqXR`](https://codepen.io/6unpnp/pen/JjBdqXR?editors=0010)
++ [setInterval and clearInterval triggered by buttons](0049.js) [`JjBdqXR`](https://codepen.io/6unpnp/pen/JjBdqXR?editors=0011)
 
 ## l
-+ [arrange letter in right triangle formation](0008.js) [`poKJWGq`](https://codepen.io/6unpnp/pen/poKJWGq?editors=0010)
++ [arrange letter in right triangle formation](0008.js) [`poKJWGq`](https://codepen.io/6unpnp/pen/poKJWGq?editors=0011)
 
 
 ## m
