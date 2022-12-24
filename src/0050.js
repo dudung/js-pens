@@ -1,31 +1,58 @@
 /*
   0050.js
-  A simple JS object and JSON
+  Textarea element for input parameters
   
   Sparisoma Viridi | https://github.com/dudung/js-pens
   
   20221224
-  1450 Start to learn about this.
+  1450 Start and distracted.
+  1639 Continue after make draft/todo.md file.
   
   Refs
-  1. JSON Object v. JavaScript Object
-     url https://medium.com/geekculture/f00ae788cc1f [20221224].
-  2. Use of let and var
-     url https://stackoverflow.com/a/21907082/9475509 [20221224].
+  1. Scroll textarea to bottom when updated
+     url https://stackoverflow.com/a/7373136/9475509 [20221224].
+  2. Style of an element
+     url https://stackoverflow.com/a/45061666/9475509 [20221224].
+  3. Change style of an element
+     url https://stackoverflow.com/a/5192938/9475509 [20221224].
 */
 
-var a = 2
-let b = 1;
 
-{
-  console.log(a);
-  //console.log(b);
+main();
 
-  let b = 3
-  var a = 100;
+
+function main() {
+  var params = {
+    "CENTERX": "75",
+    "CENTERY": "50",
+    "RADIUS": "40",
+  };
+  
+  var styles = {
+    "width": "200px",
+    "height": "120px",
+    "overflowY": "scroll",
+  };
+  
+  var id = "Params";
+  var ta = createParamsTextarea(id, params, styles);
+  document.body.append(ta);
 }
 
-//var a = -2
 
-console.log(a);
-console.log(b);
+function createParamsTextarea(id, params, styles) {
+  var ta = document.createElement("textarea");
+  ta.id = id;
+  
+  var str = "";
+  for(var key in params) {
+    str += key + "\t" + params[key] + '\n';
+  }
+  ta.value = str;
+  
+  for(var key in styles) {
+    ta.style[key] = styles[key];
+  }
+  
+  return ta;
+}
