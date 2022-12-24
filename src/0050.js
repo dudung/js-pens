@@ -15,6 +15,8 @@
      url https://stackoverflow.com/a/45061666/9475509 [20221224].
   3. Change style of an element
      url https://stackoverflow.com/a/5192938/9475509 [20221224].
+  4. Pygame Rect() arguments
+     url https://stackoverflow.com/q/47829248/9475509 [20221224].
 */
 
 
@@ -23,9 +25,10 @@ main();
 
 function main() {
   var params = {
-    "CENTERX": "75",
-    "CENTERY": "50",
-    "RADIUS": "40",
+    "LETF": "20",
+    "TOP": "10",
+    "WIDTH": "40",
+    "HEIGHT": "30",
   };
   
   var styles = {
