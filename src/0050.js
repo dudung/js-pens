@@ -11,6 +11,7 @@
   1828 Continue with readParams.
   1909 Finish readParamsFromTextarea and create global variables.
   1915 Test to change global variabel, and it is modifiable.
+  2103 Read from a textarea and write to another one.
   
   Refs
   1. Scroll textarea to bottom when updated
@@ -25,6 +26,10 @@
      url https://stackoverflow.com/a/42683530/9475509 [20221224].
   6. Modify value of a global variable inside a function
      url https://stackoverflow.com/a/49525826/9475509 [20221224].
+  7. Disable textarea
+     url https://stackoverflow.com/a/9911149/9475509 [20221224].
+  8. Join array as string with end of line character
+     url https://stackoverflow.com/a/63126261/9475509 [20221224].
 */
 
 
@@ -40,7 +45,7 @@ function main() {
     "FILL": "#ccf",
   };
   
-  var styles = {
+  var styles1 = {
     "width": "120px",
     "height": "120px",
     "overflowY": "scroll",
@@ -54,13 +59,24 @@ function main() {
     "FILL": "cfill",
   }
   
-  var id = "Params";
-  var ta = createParamsTextarea(id, params, styles);
-  document.body.append(ta);
+  var styles2 = {
+    "width": "120px",
+    "height": "120px",
+    "border": "1px solid #888",
+  };
   
-  readParamsFromTextarea(id, keys);
+  var id1 = "Params";
+  var ta1 = createParamsTextarea(id1, params, styles1);
+  document.body.append(ta1);
   
-  console.log(cx, cstroke, cfill);
+  var id2 = "Output";
+  var ta2 = createOutputTextarea(id2, styles2);
+  document.body.append(ta2);
+  
+  readParamsFromTextarea(id1, keys);
+  var str = [cx, cy, cr, cstroke, cfill]
+    .toString().split(',').join('\n');
+  print(id2, str);
 }
 
 
@@ -101,3 +117,23 @@ function createParamsTextarea(id, params, styles) {
   
   return ta;
 }
+
+
+function createOutputTextarea(id, styles) {
+  var ta = document.createElement("textarea");
+  ta.id = id;
+  
+  for(var key in styles) {
+    ta.style[key] = styles[key];
+  }
+  
+  ta.disabled = true;
+  return ta;
+}
+
+function print(id, str) {
+  var ta = document.getElementById(id);
+  ta.value += str;
+}
+
+
