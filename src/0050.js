@@ -10,6 +10,7 @@
   1743 Finish createParamsTextarea params and styles as object.
   1828 Continue with readParams.
   1909 Finish readParamsFromTextarea and create global variables.
+  1915 Test to change global variabel, and it is modifiable.
   
   Refs
   1. Scroll textarea to bottom when updated
@@ -22,6 +23,8 @@
      url https://stackoverflow.com/q/47829248/9475509 [20221224].
   5. Split on multiple white space or tabs
      url https://stackoverflow.com/a/42683530/9475509 [20221224].
+  6. Modify value of a global variable inside a function
+     url https://stackoverflow.com/a/49525826/9475509 [20221224].
 */
 
 
