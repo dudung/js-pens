@@ -48,6 +48,11 @@ tabel of content in alphabetical index
 + [force in md libs: spring.js](0036.js) [`VwdjKBr`](https://codepen.io/6unpnp/pen/VwdjKBr?editors=0011)
 
 
+## g
++ [function to draw annulus sector](0047.js) [`JjBdVZo`](https://codepen.io/6unpnp/pen/JjBdVZo?editors=0011)
++ [draw annulus sector with parameters from textarea](0048.js) [`NWBqmzY`](https://codepen.io/6unpnp/pen/NWBqmzY?editors=0011)
+
+
 ## h
 + [hello world with button and textarea](0000.js)
 [`BaVyeBW`](https://codepen.io/6unpnp/pen/BaVyeBW?editors=0010)

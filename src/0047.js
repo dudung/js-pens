@@ -12,6 +12,8 @@
   20221223
   0513 Find out that changing property of canvas will clear it.
   0542 Seperate generate points and draw the circle.
+  20221224
+  0920 Upload to https://codepen.io.
 */
 
 

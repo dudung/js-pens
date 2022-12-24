@@ -10,6 +10,7 @@
   20221224
   0909 Merge 0048, 0049, 0050 to single file 0048.js.
   0913 Comment SPEED in default parameters, postponed.
+  0924 Upload to https://codepen.io.
 */
 
 
