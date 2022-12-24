@@ -8,6 +8,8 @@
   1450 Start and distracted.
   1639 Continue after make draft/todo.md file.
   1743 Finish createParamsTextarea params and styles as object.
+  1828 Continue with readParams.
+  1909 Finish readParamsFromTextarea and create global variables.
   
   Refs
   1. Scroll textarea to bottom when updated
@@ -18,6 +20,8 @@
      url https://stackoverflow.com/a/5192938/9475509 [20221224].
   4. Pygame Rect() arguments
      url https://stackoverflow.com/q/47829248/9475509 [20221224].
+  5. Split on multiple white space or tabs
+     url https://stackoverflow.com/a/42683530/9475509 [20221224].
 */
 
 
@@ -26,21 +30,55 @@ main();
 
 function main() {
   var params = {
-    "LETF": "20",
-    "TOP": "10",
-    "WIDTH": "40",
-    "HEIGHT": "30",
+    "CIRCX": "20",
+    "CIRCY": "10",
+    "CIRCR": "40",
+    "STROKE": "#00a",
+    "FILL": "#ccf",
   };
   
   var styles = {
-    "width": "200px",
+    "width": "120px",
     "height": "120px",
     "overflowY": "scroll",
   };
   
+  var keys = {
+    "CIRCX": "cx",
+    "CIRCY": "cy",
+    "CIRCR": "cr",
+    "STROKE": "cstroke",
+    "FILL": "cfill",
+  }
+  
   var id = "Params";
   var ta = createParamsTextarea(id, params, styles);
   document.body.append(ta);
+  
+  readParamsFromTextarea(id, keys);
+  
+  console.log(cx, cstroke, cfill);
+}
+
+
+function readParamsFromTextarea(id, keys) {
+  var ta = document.getElementById(id);
+  var str = ta.value;
+  var lines = str.split('\n');
+  for(var l of lines) {
+    var cols = l.split(/(?:[[:space:]][[:space:]]+|\t)/);
+    
+    for(var k in keys) {
+      if(k == cols[0]) {
+        var num = parseFloat(cols[1]);
+        if(isNaN(num)) {
+          window[keys[k]] = cols[1];          
+        } else {
+          window[keys[k]] = num;
+        }
+      }
+    }
+  }
 }
 
 
