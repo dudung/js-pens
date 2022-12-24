@@ -7,6 +7,7 @@
   20221224
   1450 Start and distracted.
   1639 Continue after make draft/todo.md file.
+  1743 Finish createParamsTextarea params and styles as object.
   
   Refs
   1. Scroll textarea to bottom when updated
