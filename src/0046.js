@@ -1,5 +1,5 @@
 /*
-  0045.js
+  0046.js
   Design some question for a quiz
   
   Sparisoma Viridi | https://github.com/dudung/js-pens
