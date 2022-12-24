@@ -58,6 +58,9 @@ tabel of content in alphabetical index
 [`BaVyeBW`](https://codepen.io/6unpnp/pen/BaVyeBW?editors=0010)
 
 
+## i
++ [setInterval and clearInterval triggered by buttons](0049.js) [`JjBdqXR`](https://codepen.io/6unpnp/pen/JjBdqXR?editors=0010)
+
 ## l
 + [arrange letter in right triangle formation](0008.js) [`poKJWGq`](https://codepen.io/6unpnp/pen/poKJWGq?editors=0010)
 
