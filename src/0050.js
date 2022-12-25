@@ -12,6 +12,10 @@
   1909 Finish readParamsFromTextarea and create global variables.
   1915 Test to change global variabel, and it is modifiable.
   2103 Read from a textarea and write to another one.
+  20221225
+  2013 Upload to Codepen.
+  2014 Notice that button is still missing.
+  2015 Update GitHub and Codepen.
   
   Refs
   1. Scroll textarea to bottom when updated
@@ -135,5 +139,3 @@ function print(id, str) {
   var ta = document.getElementById(id);
   ta.value += str;
 }
-
-
